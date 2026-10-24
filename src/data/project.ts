@@ -11,9 +11,10 @@
 
 export const project = {
   acronym: 'GECRIS',
-  title: 'Green, Ethical and Sustainable Computing',
+  title: 'Green and Ethical ICT Competencies',
+  logo: 'logos/gecris-logo.jpeg',
   // Full official project title as written in the Grant Agreement.
-  fullTitle: '[Full official project title — to be confirmed from the Grant Agreement]',
+  fullTitle: 'Green and Ethical ICT Competencies through Resilient Internship Systems',
   tagline: 'Building capacity in green, ethical and sustainable computing across higher education.',
   number: '101325094',
   programme: 'Erasmus+',
@@ -167,7 +168,7 @@ export const funding = {
   disclaimer:
     '[PLACEHOLDER — insert the verified EU funding disclaimer text required by the Grant Agreement here. Do not publish the site without replacing this text.]',
   // Path (inside /public) to the official emblem file once supplied, e.g. 'logos/co-funded-by-the-eu.svg'
-  emblem: 'logos/eu-emblem-placeholder.svg',
+  emblem: 'logos/eu-emblem-placeholder.jpeg',
   emblemAlt: 'EU emblem placeholder — replace with the official "Co-funded by the European Union" logo',
 };
 

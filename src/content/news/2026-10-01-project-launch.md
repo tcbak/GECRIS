@@ -1,5 +1,5 @@
 ---
-title: "GECRIS project launched under Erasmus+"
+title: "Green and Ethical ICT Competencies through Resilient Internship Systems"
 description: "Sample article: the GECRIS Capacity Building in Higher Education project begins its work on green, ethical and sustainable computing."
 date: 2026-10-01
 type: news

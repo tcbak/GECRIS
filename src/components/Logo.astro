@@ -1,5 +1,6 @@
 ---
 import { project } from '../data/project';
+import { url } from '../lib/utils';
 
 interface Props {
   variant?: 'dark' | 'light';
@@ -11,13 +12,16 @@ const sub = variant === 'light' ? 'text-leaf-200' : 'text-leaf-700';
 ---
 
 <span class:list={['inline-flex items-center gap-3', className]}>
-  <svg viewBox="0 0 64 64" class="h-10 w-10 shrink-0" aria-hidden="true">
-    <rect width="64" height="64" rx="14" fill={variant === 'light' ? '#ffffff' : '#0b1f3f'} />
-    <path d="M18 44c0-15 10-25 28-26-1 18-11 28-26 28" fill="#23944f" />
-    <path d="M20 44 38 26" stroke={variant === 'light' ? '#0b1f3f' : '#d4f2de'} stroke-width="3" stroke-linecap="round" />
-    <circle cx="38" cy="26" r="3.5" fill={variant === 'light' ? '#0b1f3f' : '#d4f2de'} />
-    <circle cx="29" cy="35" r="2.5" fill={variant === 'light' ? '#0b1f3f' : '#d4f2de'} />
-  </svg>
+  <img
+    src={url(project.logo || 'logos/gecris-logo.jpeg')}
+    alt={`${project.acronym} logo`}
+    class:list={[
+      'h-11 w-auto object-contain rounded',
+      variant === 'light' && 'bg-white p-1'
+    ]}
+    loading="eager"
+    decoding="async"
+  />
   <span class="flex flex-col leading-none">
     <span class:list={['text-xl font-extrabold tracking-wide', text]}>{project.acronym}</span>
     <span class:list={['mt-1 hidden text-[11px] font-medium sm:block', sub]}>{project.title}</span>

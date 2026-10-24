@@ -3,38 +3,38 @@
   "partners": [
     {
       "id": "p1",
-      "name": "[Coordinating Institution]",
+      "name": "NSBM Green University",
       "shortName": "P1",
-      "country": "[Country]",
+      "country": "Sri Lanka",
       "region": "EU Member State",
       "role": "Coordinator",
       "description": "Placeholder description. Replace with a short (2–3 sentence) profile of the institution and its contribution to GECRIS.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
+      "logo": "images/partners/NSBM.svg",
       "placeholder": true
     },
     {
       "id": "p2",
-      "name": "[Partner Institution 2]",
+      "name": "Universitate of Bremen",
       "shortName": "P2",
-      "country": "[Country]",
+      "country": "Germany",
       "region": "EU Member State",
       "role": "Partner",
       "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
+      "logo": "images/partners/BREMEN.svg",
       "placeholder": true
     },
     {
       "id": "p3",
-      "name": "[Partner Institution 3]",
+      "name": "Sri Lanka Institute of Information Technology",
       "shortName": "P3",
-      "country": "[Country]",
+      "country": "Sri Lanka",
       "region": "EU Member State",
       "role": "Partner",
       "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
+      "logo": "images/partners/SLIIT.svg",
       "placeholder": true
     },
     {
