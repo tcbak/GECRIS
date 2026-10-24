@@ -1,0 +1,77 @@
+{
+  "_readme": "Consortium partners. Add one object per institution. 'logo' is a path inside /public. 'region' is used for grouping ('EU Member State' or 'Partner Country'). 'placeholder: true' shows a 'Placeholder' badge; set it to false (or remove it) once details are verified.",
+  "partners": [
+    {
+      "id": "p1",
+      "name": "[Coordinating Institution]",
+      "shortName": "P1",
+      "country": "[Country]",
+      "region": "EU Member State",
+      "role": "Coordinator",
+      "description": "Placeholder description. Replace with a short (2–3 sentence) profile of the institution and its contribution to GECRIS.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    },
+    {
+      "id": "p2",
+      "name": "[Partner Institution 2]",
+      "shortName": "P2",
+      "country": "[Country]",
+      "region": "EU Member State",
+      "role": "Partner",
+      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    },
+    {
+      "id": "p3",
+      "name": "[Partner Institution 3]",
+      "shortName": "P3",
+      "country": "[Country]",
+      "region": "EU Member State",
+      "role": "Partner",
+      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    },
+    {
+      "id": "p4",
+      "name": "[Partner Institution 4]",
+      "shortName": "P4",
+      "country": "[Country]",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    },
+    {
+      "id": "p5",
+      "name": "[Partner Institution 5]",
+      "shortName": "P5",
+      "country": "[Country]",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    },
+    {
+      "id": "p6",
+      "name": "[Partner Institution 6]",
+      "shortName": "P6",
+      "country": "[Country]",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "website": "",
+      "logo": "images/partners/partner-placeholder.svg",
+      "placeholder": true
+    }
+  ]
+}

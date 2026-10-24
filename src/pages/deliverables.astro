@@ -1,0 +1,27 @@
+---
+import DeliverableTable from '../components/DeliverableTable.astro';
+import Icon from '../components/Icon.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publicDeliverables } from '../lib/data';
+---
+
+<BaseLayout title="Deliverables" description={`Public deliverables of the ${project.acronym} Erasmus+ project, available for download.`}>
+  <PageHeader
+    eyebrow="Outputs"
+    title="Public deliverables"
+    description="Public project deliverables are listed below and can be downloaded once they are published."
+  />
+
+  <div class="container-page py-14">
+    <div class="mb-8 flex gap-3 rounded-xl bg-brand-50 p-4 text-sm text-brand-900">
+      <Icon name="Info" size={20} class="mt-0.5 shrink-0 text-brand-600" />
+      <p>
+        Only deliverables with public dissemination level are shown. Documents are published as PDF files after approval by
+        the consortium.
+      </p>
+    </div>
+    <DeliverableTable deliverables={publicDeliverables} />
+  </div>
+</BaseLayout>

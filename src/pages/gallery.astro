@@ -1,0 +1,26 @@
+---
+import GalleryGrid from '../components/GalleryGrid.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { galleryCategories, galleryImages } from '../lib/data';
+---
+
+<BaseLayout title="Gallery" description={`Photographs from ${project.acronym} meetings, workshops, training and dissemination events.`}>
+  <PageHeader
+    eyebrow="Gallery"
+    title="Project in pictures"
+    description="Photographs from consortium meetings, workshops, training programmes, project activities and dissemination events."
+  />
+  <div class="container-page py-14">
+    {
+      galleryImages.some((i) => i.src.includes('placeholder')) && (
+        <p class="placeholder-note mb-8">
+          The images below are placeholders. Add project photographs to <code class="font-mono">public/images/gallery/</code> and
+          list them in <code class="font-mono">src/data/gallery.json</code>.
+        </p>
+      )
+    }
+    <GalleryGrid images={galleryImages} categories={galleryCategories} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,164 @@
+---
+import FundingAcknowledgement from '../components/FundingAcknowledgement.astro';
+import Icon from '../components/Icon.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../lib/utils';
+
+const facts = [
+  { label: 'Acronym', value: project.acronym, icon: 'Flag' },
+  { label: 'Project number', value: project.number, icon: 'FileText' },
+  { label: 'Programme', value: project.programme, icon: 'Award' },
+  { label: 'Action', value: project.action, icon: 'GraduationCap' },
+  { label: 'Start date', value: formatDate(project.startDate), icon: 'Calendar' },
+  { label: 'End date', value: formatDate(project.endDate), icon: 'Calendar' },
+  { label: 'Duration', value: project.durationMonths ? `${project.durationMonths} months` : 'To be confirmed', icon: 'Clock' },
+  { label: 'Coordinator', value: project.coordinator.institution, icon: 'Landmark' },
+];
+
+const toc = [
+  ['background', 'Background'],
+  ['overview', 'Overview'],
+  ['objectives', 'Objectives'],
+  ['scope', 'Scope'],
+  ['target-groups', 'Target groups'],
+  ['outcomes', 'Expected outcomes'],
+  ['impact', 'Expected impact'],
+  ['funding', 'Funding'],
+];
+---
+
+<BaseLayout title="About the Project" description={`Background, objectives, scope and expected impact of ${project.acronym}, an Erasmus+ CBHE project.`}>
+  <PageHeader
+    eyebrow="About the project"
+    title={`${project.acronym}: ${project.title}`}
+    description={project.overview}
+  />
+
+  <div class="container-page grid gap-12 py-14 lg:grid-cols-[1fr_300px]">
+    <div class="min-w-0 space-y-16">
+      <section id="background" class="scroll-mt-28">
+        <SectionHeading eyebrow="Context" title="Project background" />
+        <div class="mt-6 space-y-4 leading-relaxed text-slate-700">
+          {project.background.map((p) => <p class:list={[p.startsWith('[') && 'placeholder-note']}>{p}</p>)}
+        </div>
+      </section>
+
+      <section id="overview" class="scroll-mt-28">
+        <SectionHeading eyebrow="Overview" title="Project overview" />
+        <p class="mt-6 leading-relaxed text-slate-700">{project.description}</p>
+        <p class="mt-4 leading-relaxed text-slate-700">{project.overview}</p>
+        {project.fullTitle.startsWith('[') && <p class="placeholder-note mt-4">{project.fullTitle}</p>}
+      </section>
+
+      <section id="objectives" class="scroll-mt-28">
+        <SectionHeading eyebrow="Objectives" title="Project objectives" />
+        <ol class="mt-8 grid gap-5 sm:grid-cols-2">
+          {
+            project.objectives.map((o, i) => (
+              <li class="card flex gap-4 p-5">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-800 font-bold text-white">{i + 1}</span>
+                <div>
+                  <h3 class="font-semibold">{o.title}</h3>
+                  <p class="mt-1 text-sm text-slate-600">{o.text}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section id="scope" class="scroll-mt-28">
+        <SectionHeading eyebrow="Scope" title="Project scope" />
+        <ul class="mt-6 space-y-3">
+          {
+            project.scope.map((s) => (
+              <li class="flex gap-3 text-slate-700">
+                <Icon name="CircleCheck" size={20} class="mt-0.5 shrink-0 text-leaf-600" />
+                {s}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section id="target-groups" class="scroll-mt-28">
+        <SectionHeading eyebrow="Who benefits" title="Target groups" />
+        <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            project.targetGroups.map((t) => (
+              <li class="rounded-xl border-l-4 border-leaf-500 bg-surface p-5">
+                <h3 class="font-semibold">{t.title}</h3>
+                <p class="mt-1 text-sm text-slate-600">{t.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section id="outcomes" class="scroll-mt-28">
+        <SectionHeading eyebrow="Results" title="Expected outcomes" />
+        <ul class="mt-6 space-y-3">
+          {
+            project.expectedOutcomes.map((o) => (
+              <li class:list={['flex gap-3 text-slate-700', o.startsWith('[') && 'placeholder-note']}>
+                <Icon name="Target" size={20} class="mt-0.5 shrink-0 text-brand-600" />
+                {o}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section id="impact" class="scroll-mt-28">
+        <SectionHeading eyebrow="Impact" title="Expected impact" />
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          {
+            project.expectedImpact.map((i) => (
+              <div class="card p-6">
+                <h3 class="text-lg font-semibold text-leaf-700">{i.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">{i.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="funding" class="scroll-mt-28">
+        <SectionHeading eyebrow="Funding" title="Funding programme" />
+        <p class="mt-6 text-slate-700">
+          {project.acronym} is funded under the {project.programme} programme, {project.action}, with project reference number
+          <strong>{project.number}</strong>.
+        </p>
+        <div class="mt-6"><FundingAcknowledgement /></div>
+      </section>
+    </div>
+
+    <aside class="space-y-6 lg:sticky lg:top-28 lg:self-start">
+      <div class="card p-6">
+        <h2 class="text-sm font-semibold tracking-wider text-slate-500 uppercase">Project facts</h2>
+        <dl class="mt-4 space-y-4">
+          {
+            facts.map((f) => (
+              <div class="flex gap-3">
+                <Icon name={f.icon} size={18} class="mt-0.5 shrink-0 text-leaf-600" />
+                <div>
+                  <dt class="text-xs text-slate-500">{f.label}</dt>
+                  <dd class="text-sm font-medium text-brand-900">{f.value}</dd>
+                </div>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <nav class="card hidden p-6 lg:block" aria-label="On this page">
+        <h2 class="text-sm font-semibold tracking-wider text-slate-500 uppercase">On this page</h2>
+        <ul class="mt-3 space-y-1.5 text-sm">
+          {toc.map(([id, label]) => <li><a href={`#${id}`} class="text-slate-600 hover:text-brand-700 hover:underline">{label}</a></li>)}
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</BaseLayout>

@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ---------------------------------------------------------------
+   GECRIS design tokens
+   Deep blue (primary) · Green (secondary) · Teal (accent)
+   All text/background pairs used below meet WCAG AA contrast.
+---------------------------------------------------------------- */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-50: #eef4fb;
+  --color-brand-100: #d7e4f4;
+  --color-brand-200: #b0c9e8;
+  --color-brand-300: #7fa5d6;
+  --color-brand-400: #4c7cbf;
+  --color-brand-500: #2c5ea6;
+  --color-brand-600: #1f4a8a;
+  --color-brand-700: #173a70;
+  --color-brand-800: #112c56;
+  --color-brand-900: #0b1f3f;
+  --color-brand-950: #07142b;
+
+  --color-leaf-50: #eefaf2;
+  --color-leaf-100: #d4f2de;
+  --color-leaf-200: #a9e3bd;
+  --color-leaf-300: #72cd95;
+  --color-leaf-400: #3fb06e;
+  --color-leaf-500: #23944f;
+  --color-leaf-600: #18773f;
+  --color-leaf-700: #145f34;
+  --color-leaf-800: #124b2b;
+  --color-leaf-900: #0e3b23;
+
+  --color-teal-accent: #0f8b8d;
+  --color-surface: #f6f8fb;
+
+  /* EU reference colours (for the funding-acknowledgement block) */
+  --color-eu-blue: #003399;
+  --color-eu-yellow: #ffcc00;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-slate-700 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply text-brand-900 tracking-tight;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-leaf-500;
+  }
+  ::selection {
+    @apply bg-leaf-200 text-brand-950;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-20;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-200;
+  }
+  .card-hover {
+    @apply hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-md;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+  .btn-primary {
+    @apply bg-brand-700 text-white hover:bg-brand-800;
+  }
+  .btn-secondary {
+    @apply bg-leaf-600 text-white hover:bg-leaf-700;
+  }
+  .btn-outline {
+    @apply border border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+  }
+  .btn-light {
+    @apply bg-white text-brand-900 hover:bg-brand-50;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.18em] text-leaf-700 uppercase;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .placeholder-note {
+    @apply rounded-lg border border-dashed border-amber-400 bg-amber-50 px-4 py-3 text-sm text-amber-900;
+  }
+  .link {
+    @apply font-medium text-brand-700 underline decoration-brand-200 underline-offset-4 hover:text-brand-900 hover:decoration-brand-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

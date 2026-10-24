@@ -1,0 +1,61 @@
+---
+/**
+ * Feedback / comments form.
+ *
+ * The website is static, so submissions go to an EXTERNAL form service
+ * configured in src/data/project.ts → feedback.endpoint (e.g. Formspree,
+ * Getform, Basin, or a script on your own server). That service stores the
+ * submissions in its database and notifies the project team.
+ *
+ * If no endpoint is configured, the form opens the visitor's email client with
+ * the message pre-filled (mailto:), so it still works with zero setup.
+ */
+import { project } from '../data/project';
+import { url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+const endpoint = project.feedback.endpoint;
+const action = endpoint || `mailto:${project.contact.email}?subject=${encodeURIComponent(`${project.acronym} website feedback`)}`;
+const method = 'post';
+const enctype = endpoint ? 'multipart/form-data' : 'text/plain';
+const input =
+  'mt-1 block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none';
+---
+
+<form action={action} method={method} enctype={enctype} class="card space-y-5 p-6 sm:p-8" data-feedback-form>
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="fb-name" class="text-sm font-medium text-brand-900">Name <span class="text-slate-400">(optional)</span></label>
+      <input id="fb-name" name="name" type="text" autocomplete="name" class={input} />
+    </div>
+    <div>
+      <label for="fb-email" class="text-sm font-medium text-brand-900">Email <span class="text-slate-400">(optional)</span></label>
+      <input id="fb-email" name="email" type="email" autocomplete="email" class={input} />
+    </div>
+  </div>
+  <div>
+    <label for="fb-type" class="text-sm font-medium text-brand-900">Topic</label>
+    <select id="fb-type" name="topic" class={input}>
+      <option>General feedback</option>
+      <option>Question about the project</option>
+      <option>Comment on a resource or deliverable</option>
+      <option>Website issue / accessibility</option>
+    </select>
+  </div>
+  <div>
+    <label for="fb-message" class="text-sm font-medium text-brand-900">Your message <span class="text-red-700" aria-hidden="true">*</span></label>
+    <textarea id="fb-message" name="message" rows="5" required class={input}></textarea>
+  </div>
+  <!-- Honeypot field for spam protection: humans leave it empty -->
+  <div class="hidden" aria-hidden="true">
+    <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  {project.feedback.successUrl && <input type="hidden" name="_next" value={project.feedback.successUrl} />}
+  <p class="text-xs text-slate-500">
+    Please do not include sensitive personal data. See our <a href={url('/privacy')} class="link">privacy policy</a>.
+    {!endpoint && ' Submitting opens your email application with your message ready to send.'}
+  </p>
+  <button type="submit" class="btn btn-primary">
+    <Icon name="Send" size={16} /> Send feedback
+  </button>
+</form>

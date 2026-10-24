@@ -1,0 +1,71 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import PartnerCard from '../components/PartnerCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { groupBy, sortedPartners } from '../lib/data';
+
+/**
+ * Grouping mode: 'region' (EU Member State / Partner Country), 'country', 'role' or 'none'.
+ * Change this value to regroup the page; the data file stays the same.
+ */
+type GroupMode = 'region' | 'country' | 'role' | 'none';
+const GROUP_BY = 'region' as GroupMode;
+
+const groups =
+  GROUP_BY === 'none'
+    ? [['All partners', sortedPartners] as const]
+    : groupBy(sortedPartners, (p) => (GROUP_BY === 'role' ? p.role : GROUP_BY === 'country' ? p.country : p.region) ?? 'Other');
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const countries = new Set(sortedPartners.map((p) => p.country).filter((c) => !c.startsWith('[')));
+---
+
+<BaseLayout title="Consortium" description={`Partner institutions of the ${project.acronym} Erasmus+ project consortium.`}>
+  <PageHeader
+    eyebrow="Consortium"
+    title="Our partners"
+    description={`${project.acronym} is implemented by an international consortium of higher education institutions and partners from Europe and partner countries.`}
+  />
+
+  <div class="container-page py-14">
+    <dl class="grid gap-4 sm:grid-cols-3">
+      <div class="card p-5">
+        <dt class="text-sm text-slate-500">Partner organisations</dt>
+        <dd class="mt-1 text-3xl font-bold text-brand-800">{sortedPartners.length}</dd>
+      </div>
+      <div class="card p-5">
+        <dt class="text-sm text-slate-500">Countries</dt>
+        <dd class="mt-1 text-3xl font-bold text-brand-800">{countries.size || 'TBC'}</dd>
+      </div>
+      <div class="card p-5">
+        <dt class="text-sm text-slate-500">Coordinator</dt>
+        <dd class="mt-1 font-semibold text-brand-800">{project.coordinator.institution}</dd>
+      </div>
+    </dl>
+
+    {
+      sortedPartners.some((p) => p.placeholder) && (
+        <p class="placeholder-note mt-8">
+          Partner names, countries, logos and descriptions on this page are placeholders. Update
+          <code class="font-mono">src/data/partners.json</code> with verified consortium information.
+        </p>
+      )
+    }
+
+    {
+      groups.map(([group, members]) => (
+        <section class="mt-14" aria-labelledby={`g-${slug(group)}`}>
+          <SectionHeading id={`g-${slug(group)}`} title={group} />
+          <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {members.map((p) => (
+              <li id={p.id} class="scroll-mt-28">
+                <PartnerCard partner={p} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>

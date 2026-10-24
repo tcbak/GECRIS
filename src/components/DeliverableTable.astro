@@ -1,0 +1,111 @@
+---
+/**
+ * Responsive deliverables list: a table on large screens, stacked cards on
+ * small screens. Only receives deliverables already filtered to public ones.
+ */
+import type { Deliverable } from '../lib/data';
+import { formatDate, url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+interface Props {
+  deliverables: Deliverable[];
+}
+const { deliverables } = Astro.props;
+const notYet = 'Not yet available';
+---
+
+{deliverables.length === 0 && <p class="text-slate-600">No public deliverables have been published yet.</p>}
+
+<!-- Desktop table -->
+<div class="card hidden overflow-x-auto lg:block">
+  <table class="w-full text-left text-sm">
+    <caption class="sr-only">Public project deliverables</caption>
+    <thead class="bg-surface text-xs tracking-wider text-slate-500 uppercase">
+      <tr>
+        <th scope="col" class="px-5 py-3 font-semibold">No.</th>
+        <th scope="col" class="px-5 py-3 font-semibold">Title &amp; description</th>
+        <th scope="col" class="px-5 py-3 font-semibold">WP</th>
+        <th scope="col" class="px-5 py-3 font-semibold">Due</th>
+        <th scope="col" class="px-5 py-3 font-semibold">Published</th>
+        <th scope="col" class="px-5 py-3 font-semibold"><span class="sr-only">Download</span></th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-slate-100">
+      {
+        deliverables.map((d) => (
+          <tr id={d.id} class="scroll-mt-28 align-top target:bg-leaf-50 hover:bg-surface/70">
+            <th scope="row" class="px-5 py-4 font-mono font-semibold whitespace-nowrap text-brand-800">{d.id}</th>
+            <td class="px-5 py-4">
+              <p class="font-semibold text-brand-900">
+                {d.title}
+                {d.placeholder && <span class="badge ml-2 bg-amber-100 align-middle text-amber-900">Placeholder</span>}
+              </p>
+              <p class="mt-1 text-slate-600">{d.description}</p>
+            </td>
+            <td class="px-5 py-4 whitespace-nowrap">
+              <a href={url(`/work-packages#wp${d.workPackage}`)} class="link">WP{d.workPackage}</a>
+            </td>
+            <td class="px-5 py-4 whitespace-nowrap text-slate-600">{formatDate(d.dueDate, 'TBC')}</td>
+            <td class="px-5 py-4 whitespace-nowrap text-slate-600">{formatDate(d.publishedDate, '—')}</td>
+            <td class="px-5 py-4 text-right whitespace-nowrap">
+              {d.file ? (
+                <a href={url(d.file)} download class="btn btn-primary px-4 py-2 text-xs">
+                  <Icon name="Download" size={14} /> PDF<span class="sr-only"> for {d.id}</span>
+                </a>
+              ) : (
+                <span class="text-xs text-slate-400">{notYet}</span>
+              )}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Mobile / tablet cards -->
+<ul class="grid gap-4 sm:grid-cols-2 lg:hidden">
+  {
+    deliverables.map((d) => (
+      <li id={`${d.id}-m`} class="card flex flex-col p-5">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-sm font-semibold text-brand-800">{d.id}</span>
+          <a href={url(`/work-packages#wp${d.workPackage}`)} class="badge bg-brand-50 text-brand-700">
+            WP{d.workPackage}
+          </a>
+        </div>
+        <h3 class="mt-2 font-semibold">{d.title}</h3>
+        {d.placeholder && <span class="badge mt-2 w-fit bg-amber-100 text-amber-900">Placeholder</span>}
+        <p class="mt-2 flex-1 text-sm text-slate-600">{d.description}</p>
+        <dl class="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-500">
+          <div>
+            <dt class="font-medium">Due</dt>
+            <dd>{formatDate(d.dueDate, 'TBC')}</dd>
+          </div>
+          <div>
+            <dt class="font-medium">Published</dt>
+            <dd>{formatDate(d.publishedDate, '—')}</dd>
+          </div>
+        </dl>
+        {d.file ? (
+          <a href={url(d.file)} download class="btn btn-primary mt-4 w-full">
+            <Icon name="Download" size={16} /> Download PDF
+          </a>
+        ) : (
+          <p class="mt-4 text-center text-xs text-slate-400">{notYet}</p>
+        )}
+      </li>
+    ))
+  }
+</ul>
+
+<script>
+  // On small screens the table is hidden; redirect #D1.1-style anchors to the matching card.
+  const focusCard = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const row = id && document.getElementById(id);
+    if (row && row.offsetParent === null) document.getElementById(`${id}-m`)?.scrollIntoView();
+  };
+  focusCard();
+  window.addEventListener('hashchange', focusCard);
+</script>

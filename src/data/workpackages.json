@@ -1,0 +1,98 @@
+{
+  "_readme": "Work packages. INDICATIVE placeholder structure based on a typical Erasmus+ CBHE project. Replace titles, objectives, activities, leads and deliverables with the official content from Annex I (Description of the Action) of the Grant Agreement.",
+  "workPackages": [
+    {
+      "number": 1,
+      "title": "Project Management and Coordination",
+      "lead": "[Lead partner]",
+      "objectives": [
+        "Ensure effective coordination, communication and decision-making across the consortium",
+        "Monitor progress, risks and budget against the work plan"
+      ],
+      "activities": [
+        "Kick-off and regular consortium meetings",
+        "Progress monitoring and reporting",
+        "Financial and administrative management"
+      ],
+      "outcomes": ["Efficient and timely implementation of the project"],
+      "deliverables": ["D1.1"],
+      "placeholder": true
+    },
+    {
+      "number": 2,
+      "title": "Needs Analysis and State of the Art",
+      "lead": "[Lead partner]",
+      "objectives": [
+        "Analyse current computing curricula and institutional practice",
+        "Identify skills gaps in green, ethical and sustainable computing"
+      ],
+      "activities": [
+        "Survey of partner institutions and stakeholders",
+        "Review of good practice in Europe and partner countries"
+      ],
+      "outcomes": ["Evidence base for curriculum development"],
+      "deliverables": ["D2.1"],
+      "placeholder": true
+    },
+    {
+      "number": 3,
+      "title": "Curriculum Development and Modernisation",
+      "lead": "[Lead partner]",
+      "objectives": [
+        "Design new or updated modules on green, ethical and sustainable computing",
+        "Develop open teaching and learning materials"
+      ],
+      "activities": [
+        "Module design workshops",
+        "Development of course materials",
+        "Peer review and accreditation support"
+      ],
+      "outcomes": ["Modernised curricula ready for delivery"],
+      "deliverables": ["D3.1"],
+      "placeholder": true
+    },
+    {
+      "number": 4,
+      "title": "Capacity Building and Pilot Implementation",
+      "lead": "[Lead partner]",
+      "objectives": [
+        "Train academic and technical staff",
+        "Pilot the new modules with students"
+      ],
+      "activities": [
+        "Train-the-trainer programmes",
+        "Pilot delivery and student feedback collection"
+      ],
+      "outcomes": ["Trained staff and validated modules"],
+      "deliverables": ["D4.1"],
+      "placeholder": true
+    },
+    {
+      "number": 5,
+      "title": "Quality Assurance and Evaluation",
+      "lead": "[Lead partner]",
+      "objectives": ["Ensure the quality of project processes and results"],
+      "activities": ["Quality assurance plan", "Internal and external evaluation"],
+      "outcomes": ["Continuous improvement of project outputs"],
+      "deliverables": ["D5.1"],
+      "placeholder": true
+    },
+    {
+      "number": 6,
+      "title": "Dissemination, Exploitation and Sustainability",
+      "lead": "[Lead partner]",
+      "objectives": [
+        "Communicate project results to target groups",
+        "Ensure the long-term use of results beyond the funding period"
+      ],
+      "activities": [
+        "Website, social media and newsletters",
+        "Dissemination events and conferences",
+        "Sustainability planning"
+      ],
+      "outcomes": ["Wide visibility and lasting impact of project results"],
+      "deliverables": ["D6.1"],
+      "placeholder": true
+    }
+  ]
+}

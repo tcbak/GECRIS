@@ -1,0 +1,38 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Accessibility Statement" description={`Accessibility statement of the ${project.acronym} project website.`}>
+  <PageHeader title="Accessibility statement" eyebrow="Legal" />
+  <div class="container-page max-w-3xl py-14">
+    <div class="prose prose-slate max-w-none">
+      <p>
+        The {project.acronym} consortium is committed to making this website accessible, aiming to conform with the Web
+        Content Accessibility Guidelines (WCAG) 2.1 at level AA.
+      </p>
+      <h2>Measures taken</h2>
+      <ul>
+        <li>Semantic HTML structure with landmarks and a logical heading order</li>
+        <li>A "Skip to main content" link and full keyboard navigation</li>
+        <li>Visible focus indicators on all interactive elements</li>
+        <li>Text alternatives for informative images</li>
+        <li>Colour combinations chosen to meet WCAG AA contrast ratios</li>
+        <li>Responsive layouts that support zoom up to 200% and small screens</li>
+        <li>Reduced motion respected when requested by the operating system</li>
+      </ul>
+      <h2>Known limitations</h2>
+      <p>
+        Some PDF documents published by the project may not be fully accessible. If you need a document in an alternative
+        format, please contact us.
+      </p>
+      <p class="not-prose placeholder-note">Placeholder: add the date of the last accessibility review.</p>
+      <h2>Feedback</h2>
+      <p>
+        If you encounter accessibility barriers, please contact us at
+        <a href={`mailto:${project.contact.email}`}>{project.contact.email}</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

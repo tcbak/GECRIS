@@ -1,0 +1,39 @@
+---
+import { url } from '../lib/utils';
+
+interface Props {
+  title: string;
+  eyebrow?: string;
+  description?: string;
+  /** Intermediate crumbs between Home and the current page */
+  breadcrumb?: { label: string; href: string }[];
+}
+const { title, eyebrow, description, breadcrumb = [] } = Astro.props;
+const crumbs = [{ label: 'Home', href: '/' }, ...breadcrumb];
+---
+
+<section class="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white">
+  <svg class="pointer-events-none absolute -top-16 -right-16 h-72 w-72 text-leaf-500/25" viewBox="0 0 200 200" aria-hidden="true">
+    <path fill="currentColor" d="M40 160c0-70 45-115 130-120-5 85-50 130-120 125"></path>
+  </svg>
+  <div class="container-page relative py-12 sm:py-16">
+    <nav aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 text-xs text-brand-200">
+        {
+          crumbs.map((c) => (
+            <li class="flex items-center gap-2">
+              <a href={url(c.href)} class="hover:text-white hover:underline">
+                {c.label}
+              </a>
+              <span aria-hidden="true">/</span>
+            </li>
+          ))
+        }
+        <li><span aria-current="page" class="text-white">{title}</span></li>
+      </ol>
+    </nav>
+    {eyebrow && <p class="mt-6 text-xs font-semibold tracking-[0.18em] text-leaf-300 uppercase">{eyebrow}</p>}
+    <h1 class:list={['max-w-4xl text-3xl font-bold text-white sm:text-4xl lg:text-5xl', eyebrow ? 'mt-2' : 'mt-6']}>{title}</h1>
+    {description && <p class="mt-4 max-w-3xl text-base leading-relaxed text-brand-100 sm:text-lg">{description}</p>}
+  </div>
+</section>

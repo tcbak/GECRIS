@@ -1,0 +1,83 @@
+---
+/**
+ * Expandable work-package card built on native <details>/<summary>,
+ * so it is keyboard accessible and works without JavaScript.
+ */
+import { publicDeliverables, type WorkPackage } from '../lib/data';
+import { url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+interface Props {
+  wp: WorkPackage;
+  open?: boolean;
+}
+const { wp, open = false } = Astro.props;
+const publicIds = new Set(publicDeliverables.map((d) => d.id));
+
+const sections = [
+  { title: 'Objectives', icon: 'Target', items: wp.objectives },
+  { title: 'Main activities', icon: 'ListChecks', items: wp.activities },
+  { title: 'Expected outcomes', icon: 'CircleCheck', items: wp.outcomes },
+];
+---
+
+<details id={`wp${wp.number}`} class="card group scroll-mt-28 overflow-hidden open:shadow-md" open={open}>
+  <summary class="flex cursor-pointer list-none items-center gap-4 p-5 sm:p-6 [&::-webkit-details-marker]:hidden">
+    <span class="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-800 text-white">
+      <span class="text-[10px] font-semibold tracking-wider text-brand-200">WP</span>
+      <span class="text-xl leading-none font-bold">{wp.number}</span>
+    </span>
+    <span class="flex-1">
+      <span class="block text-lg font-semibold text-brand-900">{wp.title}</span>
+      <span class="mt-1 flex flex-wrap items-center gap-2 text-sm text-slate-500">
+        <span>Lead: {wp.lead}</span>
+        {wp.placeholder && <span class="badge bg-amber-100 text-amber-900">Indicative</span>}
+      </span>
+    </span>
+    <Icon name="ChevronDown" size={22} class="shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+  </summary>
+
+  <div class="grid gap-6 border-t border-slate-100 bg-surface/60 p-5 sm:p-6 md:grid-cols-2 lg:grid-cols-4">
+    {
+      sections.map((s) => (
+        <div>
+          <h3 class="flex items-center gap-2 text-sm font-semibold text-brand-800">
+            <Icon name={s.icon} size={16} class="text-leaf-600" />
+            {s.title}
+          </h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            {s.items.map((item) => (
+              <li class="flex gap-2">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-leaf-500" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+    <div>
+      <h3 class="flex items-center gap-2 text-sm font-semibold text-brand-800">
+        <Icon name="FileText" size={16} class="text-leaf-600" />
+        Related deliverables
+      </h3>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {
+          wp.deliverables.map((d) => (
+            <li>
+              {publicIds.has(d) ? (
+                <a href={url(`/deliverables#${d}`)} class="badge bg-white font-mono text-brand-700 ring-1 ring-brand-200 hover:bg-brand-50">
+                  {d}
+                </a>
+              ) : (
+                <span class="badge bg-slate-100 font-mono text-slate-500" title="Not a public deliverable">
+                  {d}
+                </span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</details>

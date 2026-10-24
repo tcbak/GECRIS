@@ -1,0 +1,51 @@
+---
+import { project } from '../data/project';
+import { url } from '../lib/utils';
+import Icon from './Icon.astro';
+---
+
+<section class="relative isolate overflow-hidden bg-brand-950 text-white">
+  <picture>
+    <source srcset={url('/images/banners/hero.webp')} type="image/webp" />
+    <img
+      src={url('/images/banners/hero.jpg')}
+      alt=""
+      width="1920"
+      height="1080"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+    />
+  </picture>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-950/95 via-brand-900/80 to-brand-900/30" aria-hidden="true"></div>
+
+  <div class="container-page py-20 sm:py-28 lg:py-32">
+    <div class="max-w-3xl animate-fade-up">
+      <p class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-leaf-100 backdrop-blur">
+        <Icon name="Flag" size={14} />
+        {project.programme} · {project.action}
+      </p>
+      <h1 class="mt-6 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+        <span class="block text-leaf-300">{project.acronym}</span>
+        <span class="mt-2 block">{project.title}</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-brand-100">{project.tagline}</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href={url('/about')} class="btn btn-secondary">
+          Discover the project <Icon name="ArrowRight" size={16} />
+        </a>
+        <a href={url('/consortium')} class="btn btn-light">Meet the consortium</a>
+      </div>
+      <dl class="mt-12 flex flex-wrap gap-x-10 gap-y-4 text-sm">
+        <div>
+          <dt class="text-brand-300">Project number</dt>
+          <dd class="font-semibold text-white">{project.number}</dd>
+        </div>
+        <div>
+          <dt class="text-brand-300">Programme</dt>
+          <dd class="font-semibold text-white">{project.programme} CBHE</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

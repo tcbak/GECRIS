@@ -1,0 +1,39 @@
+---
+/**
+ * Renders a Lucide icon by name, so data files can reference icons as strings
+ * (e.g. "Leaf"). Add new icons to the map below when needed.
+ */
+import {
+  Accessibility, ArrowLeft, ArrowRight, Award, BookOpen, Calendar, ChevronDown, CircleCheck, Clock, Cpu,
+  Download, ExternalLink, FileText, Flag, FolderOpen, Globe, GraduationCap, Handshake, Image, Images, Info,
+  Landmark, Layers, Leaf, Lightbulb, Link, ListChecks, Lock, Mail, MapPin, Menu, MessageSquare, Network,
+  Newspaper, Presentation, Recycle, Scale, Send, ShieldCheck, Sprout, Target, University, Users, X, ZoomIn,
+} from '@lucide/astro';
+
+const icons = {
+  Accessibility, ArrowLeft, ArrowRight, Award, BookOpen, Calendar, ChevronDown, CircleCheck, Clock, Cpu,
+  Download, ExternalLink, FileText, Flag, FolderOpen, Globe, GraduationCap, Handshake, Image, Images, Info,
+  Landmark, Layers, Leaf, Lightbulb, Link, ListChecks, Lock, Mail, MapPin, Menu, MessageSquare, Network,
+  Newspaper, Presentation, Recycle, Scale, Send, ShieldCheck, Sprout, Target, University, Users, X, ZoomIn,
+};
+
+export type IconName = keyof typeof icons;
+
+interface Props {
+  name: IconName | string;
+  size?: number;
+  class?: string;
+  label?: string;
+}
+
+const { name, size = 20, class: className, label } = Astro.props;
+const Component = icons[name as IconName] ?? Info;
+---
+
+{
+  label ? (
+    <Component size={size} class={className} aria-label={label} role="img" />
+  ) : (
+    <Component size={size} class={className} aria-hidden="true" />
+  )
+}

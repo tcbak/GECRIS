@@ -1,0 +1,60 @@
+{
+  "_readme": "Public resources grouped by category. For local files set 'file' (path inside /public, e.g. documents/resources/x.pdf). For external links set 'url'. 'category' must match an id in 'categories'.",
+  "categories": [
+    { "id": "reports", "title": "Public Reports", "icon": "FileText", "description": "Public reports produced by the project." },
+    { "id": "publications", "title": "Publications", "icon": "BookOpen", "description": "Articles and papers by consortium members related to GECRIS." },
+    { "id": "training", "title": "Training Materials", "icon": "GraduationCap", "description": "Open teaching and training materials." },
+    { "id": "presentations", "title": "Presentations", "icon": "Presentation", "description": "Slides from project events and conferences." },
+    { "id": "outputs", "title": "Other Project Outputs", "icon": "Layers", "description": "Other publicly available results." },
+    { "id": "links", "title": "Useful Links", "icon": "Link", "description": "External resources on Erasmus+ and sustainable computing." }
+  ],
+  "resources": [
+    {
+      "category": "reports",
+      "title": "[Sample public report]",
+      "description": "Placeholder entry demonstrating a downloadable PDF. Replace with a real public report.",
+      "file": "documents/resources/sample-resource.pdf",
+      "date": null,
+      "placeholder": true
+    },
+    {
+      "category": "training",
+      "title": "[Training material: coming soon]",
+      "description": "Placeholder. Training materials will be published as they become available.",
+      "date": null,
+      "placeholder": true
+    },
+    {
+      "category": "publications",
+      "title": "[Publication: coming soon]",
+      "description": "Placeholder. Add citation details and a DOI link once available.",
+      "date": null,
+      "placeholder": true
+    },
+    {
+      "category": "presentations",
+      "title": "[Presentation: coming soon]",
+      "description": "Placeholder. Upload slides to /public/documents/resources/ and link them here.",
+      "date": null,
+      "placeholder": true
+    },
+    {
+      "category": "links",
+      "title": "Erasmus+ Programme",
+      "description": "Official website of the Erasmus+ programme of the European Union.",
+      "url": "https://erasmus-plus.ec.europa.eu/"
+    },
+    {
+      "category": "links",
+      "title": "European Education and Culture Executive Agency (EACEA)",
+      "description": "The agency that manages Erasmus+ Capacity Building in Higher Education projects.",
+      "url": "https://www.eacea.ec.europa.eu/"
+    },
+    {
+      "category": "links",
+      "title": "Erasmus+ Project Results Platform",
+      "description": "Search results and outputs of Erasmus+ projects.",
+      "url": "https://erasmus-plus.ec.europa.eu/projects"
+    }
+  ]
+}

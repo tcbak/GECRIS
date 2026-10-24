@@ -1,0 +1,55 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import WorkPackageCard from '../components/WorkPackageCard.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { workPackages } from '../lib/data';
+---
+
+<BaseLayout title="Work Packages" description={`Work packages, objectives and activities of the ${project.acronym} project.`}>
+  <PageHeader
+    eyebrow="Implementation"
+    title="Work packages"
+    description="The project is organised into work packages, each with its own objectives, activities, lead partner and deliverables."
+  />
+
+  <div class="container-page py-14">
+    {
+      workPackages.some((w) => w.placeholder) && (
+        <p class="placeholder-note mb-8">
+          The work packages shown are an indicative structure. Replace them with the official work packages from the Grant
+          Agreement in <code class="font-mono">src/data/workpackages.json</code>.
+        </p>
+      )
+    }
+
+    <nav aria-label="Work package overview" class="mb-10">
+      <ol class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          workPackages.map((wp) => (
+            <li>
+              <a href={`#wp${wp.number}`} class="card card-hover flex items-center gap-3 p-4 text-sm">
+                <span class="font-mono font-bold text-leaf-700">WP{wp.number}</span>
+                <span class="font-medium text-brand-900">{wp.title}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <div class="space-y-4">
+      {workPackages.map((wp, i) => <WorkPackageCard wp={wp} open={i === 0} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Open the work package targeted by the URL hash (e.g. /work-packages#wp3).
+  const openTarget = () => {
+    const el = location.hash ? document.querySelector<HTMLDetailsElement>(`details${location.hash}`) : null;
+    if (el) el.open = true;
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+</script>

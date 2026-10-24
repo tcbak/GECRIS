@@ -1,0 +1,93 @@
+---
+import { navigation } from '../data/project';
+import { isActive, url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+const pathname = Astro.url.pathname;
+---
+
+<nav aria-label="Main navigation" class="flex items-center">
+  <!-- Desktop -->
+  <ul class="hidden items-center gap-1 xl:flex">
+    {
+      navigation.map((item) => {
+        const active = isActive(item.href, pathname);
+        return (
+          <li>
+            <a
+              href={url(item.href)}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'rounded-full px-3 py-2 text-sm font-medium transition-colors',
+                active ? 'bg-brand-50 text-brand-800' : 'text-slate-600 hover:bg-slate-100 hover:text-brand-900',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <!-- Mobile toggle -->
+  <button
+    type="button"
+    class="inline-flex items-center justify-center rounded-lg p-2 text-brand-900 hover:bg-slate-100 xl:hidden"
+    aria-controls="mobile-menu"
+    aria-expanded="false"
+    data-menu-toggle
+  >
+    <span class="sr-only" data-menu-label>Open menu</span>
+    <span data-icon-open><Icon name="Menu" size={24} /></span>
+    <span data-icon-close class="hidden"><Icon name="X" size={24} /></span>
+  </button>
+</nav>
+
+<!-- Mobile menu panel -->
+<div id="mobile-menu" class="absolute inset-x-0 top-full hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-slate-200 bg-white shadow-lg xl:hidden" data-menu>
+  <ul class="container-page grid gap-1 py-4">
+    {
+      navigation.map((item) => {
+        const active = isActive(item.href, pathname);
+        return (
+          <li>
+            <a
+              href={url(item.href)}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'block rounded-lg px-3 py-2.5 text-base font-medium',
+                active ? 'bg-brand-50 text-brand-800' : 'text-slate-700 hover:bg-slate-100',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('hidden', !open);
+      toggle.querySelector('[data-icon-open]')?.classList.toggle('hidden', open);
+      toggle.querySelector('[data-icon-close]')?.classList.toggle('hidden', !open);
+      const label = toggle.querySelector('[data-menu-label]');
+      if (label) label.textContent = open ? 'Close menu' : 'Open menu';
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 1280px)').addEventListener('change', (e) => e.matches && setOpen(false));
+  }
+</script>

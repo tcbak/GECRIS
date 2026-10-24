@@ -1,0 +1,18 @@
+{
+  "_readme": "Gallery photos. Put images in /public/images/gallery/ (JPG or WebP, ideally max 1600px wide and under 400 KB). 'category' must match a category id. Always write meaningful 'alt' text. Obtain consent from identifiable people before publishing photos.",
+  "categories": [
+    { "id": "meetings", "title": "Consortium Meetings" },
+    { "id": "workshops", "title": "Workshops" },
+    { "id": "training", "title": "Training Programmes" },
+    { "id": "activities", "title": "Project Activities" },
+    { "id": "dissemination", "title": "Dissemination Events" }
+  ],
+  "images": [
+    { "src": "images/gallery/placeholder-1.svg", "alt": "Placeholder image for a consortium meeting photo", "caption": "[Kick-off meeting: placeholder]", "category": "meetings", "date": null, "width": 1200, "height": 800 },
+    { "src": "images/gallery/placeholder-2.svg", "alt": "Placeholder image for a workshop photo", "caption": "[Workshop: placeholder]", "category": "workshops", "date": null, "width": 1200, "height": 800 },
+    { "src": "images/gallery/placeholder-3.svg", "alt": "Placeholder image for a training programme photo", "caption": "[Training programme: placeholder]", "category": "training", "date": null, "width": 1200, "height": 800 },
+    { "src": "images/gallery/placeholder-4.svg", "alt": "Placeholder image for a project activity photo", "caption": "[Project activity: placeholder]", "category": "activities", "date": null, "width": 1200, "height": 800 },
+    { "src": "images/gallery/placeholder-5.svg", "alt": "Placeholder image for a dissemination event photo", "caption": "[Dissemination event: placeholder]", "category": "dissemination", "date": null, "width": 1200, "height": 800 },
+    { "src": "images/gallery/placeholder-6.svg", "alt": "Placeholder image for a consortium meeting photo", "caption": "[Consortium meeting: placeholder]", "category": "meetings", "date": null, "width": 1200, "height": 800 }
+  ]
+}

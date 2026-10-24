@@ -1,0 +1,127 @@
+---
+import FeedbackForm from '../components/FeedbackForm.astro';
+import FundingAcknowledgement from '../components/FundingAcknowledgement.astro';
+import Icon from '../components/Icon.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortedPartners } from '../lib/data';
+import { url } from '../lib/utils';
+
+const c = project.coordinator;
+---
+
+<BaseLayout title="Contact" description={`Contact the ${project.acronym} project coordinator and consortium.`}>
+  <PageHeader eyebrow="Contact" title="Get in touch" description="We welcome questions, comments and cooperation enquiries about the project." />
+
+  <div class="container-page grid gap-10 py-14 lg:grid-cols-3">
+    <section class="card p-6 sm:p-8 lg:col-span-2" aria-labelledby="coord-h">
+      <h2 id="coord-h" class="text-xl font-bold">Project coordination</h2>
+      <dl class="mt-6 grid gap-6 sm:grid-cols-2">
+        <div class="flex gap-3">
+          <Icon name="Landmark" size={20} class="mt-0.5 shrink-0 text-leaf-600" />
+          <div>
+            <dt class="text-xs text-slate-500">Coordinating institution</dt>
+            <dd class="font-medium text-brand-900">{c.institution}</dd>
+            <dd class="text-sm text-slate-600">{c.address}</dd>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <Icon name="Users" size={20} class="mt-0.5 shrink-0 text-leaf-600" />
+          <div>
+            <dt class="text-xs text-slate-500">{c.role}</dt>
+            <dd class="font-medium text-brand-900">{c.contactPerson}</dd>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <Icon name="Mail" size={20} class="mt-0.5 shrink-0 text-leaf-600" />
+          <div>
+            <dt class="text-xs text-slate-500">Official project email</dt>
+            <dd><a href={`mailto:${project.contact.email}`} class="link break-all">{project.contact.email}</a></dd>
+          </div>
+        </div>
+        {
+          c.website && (
+            <div class="flex gap-3">
+              <Icon name="Globe" size={20} class="mt-0.5 shrink-0 text-leaf-600" />
+              <div>
+                <dt class="text-xs text-slate-500">Website</dt>
+                <dd><a href={c.website} class="link" target="_blank" rel="noopener noreferrer">{c.website}</a></dd>
+              </div>
+            </div>
+          )
+        }
+      </dl>
+      <a href={`mailto:${project.contact.email}`} class="btn btn-primary mt-8">
+        <Icon name="Mail" size={16} /> Email the project team
+      </a>
+    </section>
+
+    <aside class="space-y-6">
+      <div class="card p-6">
+        <h2 class="text-sm font-semibold tracking-wider text-slate-500 uppercase">Useful links</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          {
+            project.links.map((l) => (
+              <li>
+                <a href={l.url} target="_blank" rel="noopener noreferrer" class="link inline-flex items-start gap-1.5">
+                  {l.label} <Icon name="ExternalLink" size={13} class="mt-1 shrink-0" />
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      {
+        project.social.length > 0 && (
+          <div class="card p-6">
+            <h2 class="text-sm font-semibold tracking-wider text-slate-500 uppercase">Follow us</h2>
+            <ul class="mt-4 space-y-2 text-sm">
+              {project.social.map((s) => <li><a href={s.url} class="link" target="_blank" rel="noopener noreferrer">{s.label}</a></li>)}
+            </ul>
+          </div>
+        )
+      }
+    </aside>
+  </div>
+
+  <section class="section bg-surface" aria-labelledby="partners-contact">
+    <div class="container-page">
+      <SectionHeading id="partners-contact" eyebrow="Consortium" title="Partner contacts" description="For partner-specific enquiries, please visit the partner institution's website or contact the project team." />
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          sortedPartners.map((p) => (
+            <li class="card flex items-center gap-4 p-4">
+              <img src={url(p.logo || '/images/partners/partner-placeholder.svg')} alt="" width="80" height="40" loading="lazy" class="h-10 w-20 shrink-0 object-contain" />
+              <div class="min-w-0">
+                <p class="truncate font-medium text-brand-900">{p.name}</p>
+                <p class="text-xs text-slate-500">{p.country}{p.role ? ` · ${p.role}` : ''}</p>
+                {p.website && (
+                  <a href={p.website} class="link text-xs" target="_blank" rel="noopener noreferrer">Website<span class="sr-only"> of {p.name} (opens in a new tab)</span></a>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="feedback-h">
+    <div class="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
+      <SectionHeading
+        id="feedback-h"
+        eyebrow="Feedback"
+        title="Share your feedback"
+        description="Comments on the project, its resources or this website help us improve. Your feedback is sent to the project team."
+      />
+      <FeedbackForm />
+    </div>
+  </section>
+
+  <div class="container-page pb-16">
+    <FundingAcknowledgement />
+  </div>
+</BaseLayout>

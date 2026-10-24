@@ -1,0 +1,44 @@
+---
+import type { Resource } from '../lib/data';
+import { formatDate, url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+interface Props {
+  resource: Resource;
+}
+const { resource } = Astro.props;
+const isFile = Boolean(resource.file);
+const href = resource.file ? url(resource.file) : resource.url;
+const ext = resource.file?.split('.').pop()?.toUpperCase();
+---
+
+<article class="card card-hover flex h-full flex-col p-5">
+  <div class="flex items-start gap-3">
+    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+      <Icon name={isFile ? 'FileText' : href ? 'Globe' : 'Clock'} size={20} />
+    </span>
+    <div class="min-w-0">
+      <h3 class="font-semibold leading-snug">{resource.title}</h3>
+      {resource.date && <p class="mt-0.5 text-xs text-slate-500">{formatDate(resource.date)}</p>}
+    </div>
+  </div>
+  <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{resource.description}</p>
+  {resource.placeholder && <span class="badge mt-3 w-fit bg-amber-100 text-amber-900">Placeholder</span>}
+  <div class="mt-4">
+    {
+      isFile ? (
+        <a href={href} download class="link inline-flex items-center gap-1.5 text-sm">
+          <Icon name="Download" size={15} /> Download {ext}
+          <span class="sr-only">: {resource.title}</span>
+        </a>
+      ) : href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" class="link inline-flex items-center gap-1.5 text-sm">
+          Visit link <Icon name="ExternalLink" size={14} />
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
+      ) : (
+        <span class="text-sm text-slate-400">Coming soon</span>
+      )
+    }
+  </div>
+</article>

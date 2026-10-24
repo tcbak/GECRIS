@@ -1,0 +1,64 @@
+---
+import { navigation, project } from '../data/project';
+import { url } from '../lib/utils';
+import FundingAcknowledgement from './FundingAcknowledgement.astro';
+import Icon from './Icon.astro';
+import Logo from './Logo.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto bg-brand-950 text-brand-100">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <Logo variant="light" />
+      <p class="mt-4 max-w-md text-sm leading-relaxed text-brand-200">{project.description}</p>
+      <div class="mt-6">
+        <FundingAcknowledgement variant="dark" />
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold tracking-wider text-white uppercase">Explore</h2>
+      <ul class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
+        {
+          navigation.slice(1).map((item) => (
+            <li>
+              <a href={url(item.href)} class="text-brand-200 hover:text-white hover:underline">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold tracking-wider text-white uppercase">Contact</h2>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li class="flex items-start gap-2">
+          <Icon name="Mail" size={16} class="mt-0.5 shrink-0 text-leaf-300" />
+          <a href={`mailto:${project.contact.email}`} class="break-all text-brand-200 hover:text-white hover:underline">
+            {project.contact.email}
+          </a>
+        </li>
+        <li class="flex items-start gap-2">
+          <Icon name="Landmark" size={16} class="mt-0.5 shrink-0 text-leaf-300" />
+          <span class="text-brand-200">{project.coordinator.institution}</span>
+        </li>
+      </ul>
+      <h2 class="mt-8 text-sm font-semibold tracking-wider text-white uppercase">Legal</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href={url('/privacy')} class="text-brand-200 hover:text-white hover:underline">Privacy policy</a></li>
+        <li><a href={url('/accessibility')} class="text-brand-200 hover:text-white hover:underline">Accessibility statement</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-brand-300 sm:flex-row sm:items-center sm:justify-between">
+      <p>© {year} {project.acronym} consortium. Project No. {project.number}.</p>
+      <p>{project.programme} {project.action}</p>
+    </div>
+  </div>
+</footer>

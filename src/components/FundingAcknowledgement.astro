@@ -1,0 +1,42 @@
+---
+/**
+ * EU funding acknowledgement block.
+ * Text and emblem come from `funding` in src/data/project.ts.
+ * While `funding.verified` is false, a visible placeholder warning is shown.
+ */
+import { funding, project } from '../data/project';
+import { url } from '../lib/utils';
+
+interface Props {
+  variant?: 'full' | 'compact' | 'dark';
+}
+const { variant = 'full' } = Astro.props;
+const dark = variant === 'dark';
+---
+
+<div class:list={['flex flex-col gap-4 sm:flex-row sm:items-center', variant === 'full' && 'card p-6']}>
+  <img
+    src={url(funding.emblem)}
+    alt={funding.emblemAlt}
+    width="240"
+    height="64"
+    loading="lazy"
+    decoding="async"
+    class:list={['h-14 w-auto shrink-0 self-start rounded sm:self-center', dark && 'bg-white p-1']}
+  />
+  <div class:list={['text-sm', dark ? 'text-brand-100' : 'text-slate-600']}>
+    <p class:list={['font-semibold', dark ? 'text-white' : 'text-brand-900']}>
+      {project.programme} · Project No. {project.number}
+    </p>
+    <p class="mt-1">{funding.acknowledgement}</p>
+    {variant !== 'compact' && <p class="mt-2 text-xs leading-relaxed opacity-90">{funding.disclaimer}</p>}
+    {
+      !funding.verified && variant === 'full' && (
+        <p class="placeholder-note mt-3 text-xs">
+          Placeholder: insert the verified acknowledgement, disclaimer and official emblem in
+          <code class="font-mono">src/data/project.ts</code> (<code class="font-mono">funding</code>) before publishing.
+        </p>
+      )
+    }
+  </div>
+</div>

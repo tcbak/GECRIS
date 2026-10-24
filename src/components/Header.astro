@@ -1,0 +1,21 @@
+---
+import { project } from '../data/project';
+import { url } from '../lib/utils';
+import Logo from './Logo.astro';
+import Navbar from './Navbar.astro';
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+  <div class="hidden bg-brand-900 text-xs text-brand-100 sm:block">
+    <div class="container-page flex h-8 items-center justify-between">
+      <span>{project.programme} {project.action}</span>
+      <span>Project No. {project.number}</span>
+    </div>
+  </div>
+  <div class="container-page flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+    <a href={url('/')} class="rounded-lg" aria-label={`${project.acronym} home`}>
+      <Logo />
+    </a>
+    <Navbar />
+  </div>
+</header>

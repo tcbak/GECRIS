@@ -1,0 +1,221 @@
+---
+import EventCard from '../components/EventCard.astro';
+import FundingAcknowledgement from '../components/FundingAcknowledgement.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import NewsCard from '../components/NewsCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sortedPartners } from '../lib/data';
+import { getNews, getUpcomingEvents } from '../lib/news';
+import { url } from '../lib/utils';
+
+const latest = (await getNews()).slice(0, 3);
+const upcoming = (await getUpcomingEvents()).slice(0, 3);
+
+const quickLinks = [
+  { title: 'Deliverables', text: 'Public reports and outputs of the project.', href: '/deliverables', icon: 'FileText' },
+  { title: 'Resources', text: 'Training materials, publications and links.', href: '/resources', icon: 'FolderOpen' },
+  { title: 'Work Packages', text: 'How the project is organised.', href: '/work-packages', icon: 'Layers' },
+  { title: 'Gallery', text: 'Photos from meetings and events.', href: '/gallery', icon: 'Images' },
+];
+---
+
+<BaseLayout description={project.description}>
+  <Hero />
+
+  <!-- Highlights strip -->
+  <section aria-label="Project highlights" class="relative z-10 -mt-10">
+    <div class="container-page">
+      <ul class="card grid divide-y divide-slate-100 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x">
+        {
+          project.highlights.map((h) => (
+            <li class="flex items-center gap-4 p-5">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-leaf-50 text-leaf-700">
+                <Icon name={h.icon} size={22} />
+              </span>
+              <span>
+                <span class="block text-xs font-medium tracking-wide text-slate-500 uppercase">{h.label}</span>
+                <span class="block font-semibold text-brand-900">{h.value}</span>
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="section overflow-x-clip">
+    <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+      <div>
+        <SectionHeading eyebrow="About GECRIS" title="Responsible computing for a sustainable future" />
+        <p class="mt-6 text-lg leading-relaxed text-slate-600">{project.description}</p>
+        <p class="mt-4 leading-relaxed text-slate-600">{project.overview}</p>
+        <a href={url('/about')} class="btn btn-primary mt-8">
+          Learn more about the project <Icon name="ArrowRight" size={16} />
+        </a>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 -z-10 rotate-2 rounded-3xl bg-gradient-to-br from-leaf-100 to-brand-100" aria-hidden="true"></div>
+        <div class="card grid gap-6 p-8 sm:grid-cols-3">
+          {
+            [
+              { icon: 'Leaf', title: 'Green', text: 'Energy- and resource-efficient computing' },
+              { icon: 'Scale', title: 'Ethical', text: 'Fair, transparent and accountable technology' },
+              { icon: 'Recycle', title: 'Sustainable', text: 'Long-term social and environmental value' },
+            ].map((p) => (
+              <div class="text-center sm:text-left">
+                <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-800 text-leaf-300 sm:mx-0">
+                  <Icon name={p.icon} size={24} />
+                </span>
+                <h3 class="mt-4 font-semibold">{p.title}</h3>
+                <p class="mt-1 text-sm text-slate-600">{p.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectives -->
+  <section class="section bg-surface" aria-labelledby="objectives-heading">
+    <div class="container-page">
+      <SectionHeading
+        id="objectives-heading"
+        eyebrow="Objectives"
+        title="What GECRIS aims to achieve"
+        description="The project's key objectives combine curriculum innovation, capacity building and international cooperation."
+        align="center"
+      />
+      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          project.objectives.map((o) => (
+            <li class="card card-hover p-6">
+              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-900 text-white">
+                <Icon name={o.icon} size={22} />
+              </span>
+              <h3 class="mt-5 text-lg font-semibold">{o.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{o.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- News & events -->
+  <section class="section" aria-labelledby="news-heading">
+    <div class="container-page">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <SectionHeading id="news-heading" eyebrow="Latest" title="News & events" />
+        <a href={url('/news')} class="btn btn-outline">All news <Icon name="ArrowRight" size={16} /></a>
+      </div>
+      <div class="mt-10 grid gap-8 lg:grid-cols-4">
+        <ul class:list={['grid gap-6 sm:grid-cols-2', upcoming.length ? 'lg:col-span-3 lg:grid-cols-3' : 'lg:col-span-4 lg:grid-cols-3']}>
+          {latest.map((a) => <li><NewsCard article={a} /></li>)}
+        </ul>
+        {
+          upcoming.length > 0 && (
+            <aside aria-labelledby="upcoming-heading">
+              <h3 id="upcoming-heading" class="flex items-center gap-2 text-sm font-semibold tracking-wider text-slate-500 uppercase">
+                <Icon name="Calendar" size={16} /> Upcoming events
+              </h3>
+              <ul class="mt-4 space-y-3">
+                {upcoming.map((e) => <li><EventCard event={e} /></li>)}
+              </ul>
+            </aside>
+          )
+        }
+      </div>
+      {latest.length === 0 && <p class="mt-8 text-slate-600">News will be published here soon.</p>}
+    </div>
+  </section>
+
+  <!-- Consortium -->
+  <section class="section bg-surface" aria-labelledby="partners-heading">
+    <div class="container-page">
+      <SectionHeading
+        id="partners-heading"
+        eyebrow="Consortium"
+        title="An international partnership"
+        description="GECRIS brings together higher education institutions from Europe and partner countries."
+        align="center"
+      />
+      <ul class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        {
+          sortedPartners.map((p) => (
+            <li>
+              <a
+                href={url(`/consortium#${p.id}`)}
+                class="card card-hover flex h-28 items-center justify-center p-4"
+                title={p.name}
+              >
+                <img
+                  src={url(p.logo || '/images/partners/partner-placeholder.svg')}
+                  alt={`${p.name} logo`}
+                  width="240"
+                  height="120"
+                  loading="lazy"
+                  decoding="async"
+                  class="max-h-16 w-auto object-contain grayscale transition hover:grayscale-0"
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-10 text-center">
+        <a href={url('/consortium')} class="btn btn-primary">Meet the partners <Icon name="ArrowRight" size={16} /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick links -->
+  <section class="section" aria-labelledby="quick-heading">
+    <div class="container-page">
+      <SectionHeading id="quick-heading" eyebrow="Explore" title="Deliverables & resources" />
+      <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          quickLinks.map((q) => (
+            <li>
+              <a href={url(q.href)} class="card card-hover group flex h-full flex-col p-6">
+                <Icon name={q.icon} size={28} class="text-leaf-600" />
+                <span class="mt-4 text-lg font-semibold text-brand-900">{q.title}</span>
+                <span class="mt-1 flex-1 text-sm text-slate-600">{q.text}</span>
+                <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                  Open <Icon name="ArrowRight" size={14} class="transition group-hover:translate-x-0.5" />
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact + funding -->
+  <section class="section bg-gradient-to-br from-brand-900 to-brand-800 text-white" aria-labelledby="contact-heading">
+    <div class="container-page grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow text-leaf-300">Get in touch</p>
+        <h2 id="contact-heading" class="mt-2 text-3xl font-bold text-white">Interested in GECRIS?</h2>
+        <p class="mt-4 max-w-xl text-brand-100">
+          Contact the project team for information about activities, results or cooperation opportunities.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={`mailto:${project.contact.email}`} class="btn btn-secondary">
+            <Icon name="Mail" size={16} />
+            {project.contact.email}
+          </a>
+          <a href={url('/contact')} class="btn btn-light">Contact page</a>
+        </div>
+      </div>
+      <div class="rounded-2xl bg-white p-1">
+        <FundingAcknowledgement variant="full" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

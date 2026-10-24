@@ -1,0 +1,71 @@
+{
+  "_readme": "PUBLIC deliverables only. Entries with \"public\": false are never shown. Put PDFs in /public/documents/deliverables/ and set 'file' to the path inside /public. Leave 'file' empty if not yet published. Never place confidential documents in /public: everything there is downloadable.",
+  "deliverables": [
+    {
+      "id": "D1.1",
+      "title": "[Deliverable title]",
+      "workPackage": 1,
+      "description": "Placeholder entry with a sample PDF. Replace with the official deliverable title and description from the Grant Agreement.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "documents/deliverables/sample-deliverable.pdf",
+      "public": true,
+      "placeholder": true
+    },
+    {
+      "id": "D2.1",
+      "title": "[Deliverable title]",
+      "workPackage": 2,
+      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": true
+    },
+    {
+      "id": "D3.1",
+      "title": "[Deliverable title]",
+      "workPackage": 3,
+      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": true
+    },
+    {
+      "id": "D4.1",
+      "title": "[Deliverable title]",
+      "workPackage": 4,
+      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": true
+    },
+    {
+      "id": "D5.1",
+      "title": "[Internal deliverable: example of a hidden entry]",
+      "workPackage": 5,
+      "description": "This entry has \"public\": false and is therefore NOT shown on the website.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": false,
+      "placeholder": true
+    },
+    {
+      "id": "D6.1",
+      "title": "[Deliverable title]",
+      "workPackage": 6,
+      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": true
+    }
+  ]
+}

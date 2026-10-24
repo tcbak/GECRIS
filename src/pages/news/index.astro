@@ -1,0 +1,45 @@
+---
+import EventCard from '../../components/EventCard.astro';
+import Icon from '../../components/Icon.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { project } from '../../data/project';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getNews, getUpcomingEvents } from '../../lib/news';
+
+const news = await getNews();
+const upcoming = await getUpcomingEvents();
+---
+
+<BaseLayout title="News & Events" description={`Latest news, events and activities of the ${project.acronym} project.`}>
+  <PageHeader
+    eyebrow="Stay informed"
+    title="News & events"
+    description="Updates on project activities, meetings, workshops and dissemination events."
+  />
+
+  <div class="container-page py-14">
+    {
+      upcoming.length > 0 && (
+        <section aria-labelledby="upcoming" class="mb-14">
+          <h2 id="upcoming" class="flex items-center gap-2 text-xl font-bold">
+            <Icon name="Calendar" size={20} class="text-leaf-600" /> Upcoming events
+          </h2>
+          <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {upcoming.map((e) => <li><EventCard event={e} /></li>)}
+          </ul>
+        </section>
+      )
+    }
+
+    <section aria-labelledby="all-news">
+      <h2 id="all-news" class="flex items-center gap-2 text-xl font-bold">
+        <Icon name="Newspaper" size={20} class="text-leaf-600" /> All news & events
+      </h2>
+      {news.length === 0 && <p class="mt-6 text-slate-600">No news has been published yet.</p>}
+      <ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {news.map((a) => <li><NewsCard article={a} /></li>)}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,120 @@
+---
+/**
+ * Responsive gallery grid with category filter and a lightweight lightbox
+ * using the native <dialog> element. Without JavaScript, each thumbnail
+ * simply links to the full-size image.
+ */
+import type { GalleryImage } from '../lib/data';
+import { formatDate, url } from '../lib/utils';
+import Icon from './Icon.astro';
+
+interface Props {
+  images: GalleryImage[];
+  categories?: { id: string; title: string }[];
+}
+const { images, categories = [] } = Astro.props;
+const used = categories.filter((c) => images.some((i) => i.category === c.id));
+const categoryTitle = (id: string) => categories.find((c) => c.id === id)?.title ?? id;
+---
+
+<div data-gallery>
+  {
+    used.length > 1 && (
+      <div class="mb-8 flex flex-wrap gap-2" role="group" aria-label="Filter photos by category">
+        <button type="button" class="btn btn-outline aria-pressed:border-brand-700 aria-pressed:bg-brand-700 aria-pressed:text-white" aria-pressed="true" data-filter="all">
+          All
+        </button>
+        {used.map((c) => (
+          <button type="button" class="btn btn-outline aria-pressed:border-brand-700 aria-pressed:bg-brand-700 aria-pressed:text-white" aria-pressed="false" data-filter={c.id}>
+            {c.title}
+          </button>
+        ))}
+      </div>
+    )
+  }
+
+  <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      images.map((img, i) => (
+        <li data-category={img.category}>
+          <figure class="card group overflow-hidden">
+            <a
+              href={url(img.src)}
+              class="relative block aspect-[3/2] overflow-hidden bg-brand-100"
+              data-lightbox={i}
+              data-caption={img.caption ?? ''}
+              data-alt={img.alt}
+            >
+              <img
+                src={url(img.src)}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+              <span class="absolute right-3 bottom-3 rounded-full bg-white/90 p-2 text-brand-800 opacity-0 shadow transition group-hover:opacity-100 group-focus-within:opacity-100">
+                <Icon name="ZoomIn" size={16} />
+              </span>
+              <span class="sr-only">Enlarge image</span>
+            </a>
+            {(img.caption || img.date) && (
+              <figcaption class="px-4 py-3 text-sm">
+                {img.caption && <span class="block font-medium text-brand-900">{img.caption}</span>}
+                <span class="text-xs text-slate-500">
+                  {categoryTitle(img.category)}
+                  {img.date && ` · ${formatDate(img.date)}`}
+                </span>
+              </figcaption>
+            )}
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+
+  <dialog class="m-auto max-h-[92vh] w-[min(96vw,1200px)] overflow-visible bg-transparent p-0 backdrop:bg-brand-950/85" data-lightbox-dialog aria-label="Image viewer">
+    <figure class="relative">
+      <img src="" alt="" class="mx-auto max-h-[80vh] w-auto rounded-lg shadow-2xl" data-lightbox-img />
+      <figcaption class="mt-3 text-center text-sm text-white" data-lightbox-caption></figcaption>
+      <button type="button" class="absolute -top-3 -right-3 rounded-full bg-white p-2 text-brand-900 shadow-lg hover:bg-brand-50" data-lightbox-close>
+        <Icon name="X" size={20} />
+        <span class="sr-only">Close image viewer</span>
+      </button>
+    </figure>
+  </dialog>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((gallery) => {
+    // Category filter
+    const buttons = gallery.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    buttons.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        gallery.querySelectorAll<HTMLElement>('[data-category]').forEach((item) => {
+          item.hidden = f !== 'all' && item.dataset.category !== f;
+        });
+      }),
+    );
+
+    // Lightbox
+    const dialog = gallery.querySelector<HTMLDialogElement>('[data-lightbox-dialog]');
+    const img = gallery.querySelector<HTMLImageElement>('[data-lightbox-img]');
+    const caption = gallery.querySelector<HTMLElement>('[data-lightbox-caption]');
+    if (!dialog || !img || !caption) return;
+    gallery.querySelectorAll<HTMLAnchorElement>('[data-lightbox]').forEach((link) =>
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        img.src = link.href;
+        img.alt = link.dataset.alt ?? '';
+        caption.textContent = link.dataset.caption ?? '';
+        dialog.showModal();
+      }),
+    );
+    gallery.querySelector('[data-lightbox-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => e.target === dialog && dialog.close());
+  });
+</script>

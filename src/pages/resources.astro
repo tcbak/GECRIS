@@ -1,0 +1,59 @@
+---
+import Icon from '../components/Icon.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { resourceCategories, resources } from '../lib/data';
+
+const sections = resourceCategories
+  .map((c) => ({ ...c, items: resources.filter((r) => r.category === c.id) }))
+  .filter((c) => c.items.length > 0);
+---
+
+<BaseLayout title="Resources" description={`Public reports, publications, training materials and other outputs of ${project.acronym}.`}>
+  <PageHeader
+    eyebrow="Resources"
+    title="Resources & publications"
+    description="Publicly available reports, publications, training materials, presentations and useful links."
+  />
+
+  <div class="container-page grid gap-12 py-14 lg:grid-cols-[240px_1fr]">
+    <nav aria-label="Resource categories" class="lg:sticky lg:top-28 lg:self-start">
+      <ul class="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
+        {
+          sections.map((s) => (
+            <li>
+              <a href={`#${s.id}`} class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-200 hover:bg-brand-50 hover:text-brand-800 lg:ring-0">
+                <Icon name={s.icon} size={16} class="text-leaf-600" />
+                {s.title}
+                <span class="ml-auto rounded-full bg-slate-100 px-2 text-xs text-slate-500">{s.items.length}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="min-w-0 space-y-14">
+      {
+        sections.map((s) => (
+          <section id={s.id} class="scroll-mt-28" aria-labelledby={`${s.id}-h`}>
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-800 text-white">
+                <Icon name={s.icon} size={20} />
+              </span>
+              <div>
+                <h2 id={`${s.id}-h`} class="text-xl font-bold">{s.title}</h2>
+                <p class="text-sm text-slate-500">{s.description}</p>
+              </div>
+            </div>
+            <ul class="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {s.items.map((r) => <li><ResourceCard resource={r} /></li>)}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+import PageHeader from '../components/PageHeader.astro';
+import { project } from '../data/project';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy Policy" description={`Privacy policy of the ${project.acronym} project website.`}>
+  <PageHeader title="Privacy policy" eyebrow="Legal" />
+  <div class="container-page max-w-3xl py-14">
+    <p class="placeholder-note mb-8">
+      Placeholder: this privacy policy is a starting template. It must be reviewed and completed by the coordinating
+      institution's data protection officer to comply with the GDPR before the website is published.
+    </p>
+    <div class="prose prose-slate max-w-none">
+      <h2>Who is responsible</h2>
+      <p>
+        This website is operated by the {project.acronym} consortium. The data controller is
+        <strong>{project.coordinator.institution}</strong>. Contact:
+        <a href={`mailto:${project.contact.email}`}>{project.contact.email}</a>.
+      </p>
+      <h2>Data we collect</h2>
+      <p>
+        This is a static website. It does not use cookies, user accounts, analytics or tracking scripts, and fonts are
+        served from the website itself rather than from third-party services.
+      </p>
+      <p>
+        Your hosting provider may record technical information such as IP address, date and time of access in server logs.
+        [Placeholder: state the hosting provider and log retention period.]
+      </p>
+      <h2>Feedback and email</h2>
+      <p>
+        If you contact us by email or use the feedback form, we process the information you provide only to respond to you.
+        [Placeholder: if an external form service is configured, name it here and link to its privacy policy.]
+      </p>
+      <h2>External links</h2>
+      <p>This website links to external websites. We are not responsible for their privacy practices.</p>
+      <h2>Your rights</h2>
+      <p>
+        Under the GDPR you have the right to access, rectify or erase your personal data, and to lodge a complaint with a
+        supervisory authority. To exercise your rights, contact us at the address above.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
