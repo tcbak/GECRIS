@@ -1,71 +1,225 @@
 {
-  "_readme": "PUBLIC deliverables only. Entries with \"public\": false are never shown. Put PDFs in /public/documents/deliverables/ and set 'file' to the path inside /public. Leave 'file' empty if not yet published. Never place confidential documents in /public: everything there is downloadable.",
+  "_readme": "PUBLIC deliverables only. Documents will be published as PDF files after approval by the consortium.",
   "deliverables": [
     {
       "id": "D1.1",
-      "title": "[Deliverable title]",
+      "title": "Project Management & Quality Assurance Plan",
       "workPackage": 1,
-      "description": "Placeholder entry with a sample PDF. Replace with the official deliverable title and description from the Grant Agreement.",
+      "description": "Comprehensive governance structure, KPI framework, risk register, and quality assurance procedures for project execution.",
       "dueDate": null,
       "publishedDate": null,
-      "file": "documents/deliverables/sample-deliverable.pdf",
+      "file": "",
       "public": true,
-      "placeholder": true
+      "placeholder": false
+    },
+    {
+      "id": "D1.2",
+      "title": "External Advisory Committee Terms of Reference",
+      "workPackage": 1,
+      "description": "Terms of reference, mandate, composition, and evaluation guidelines for the independent External Advisory Committee (EAC).",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D1.4",
+      "title": "Final External Evaluation & Impact Assessment",
+      "workPackage": 1,
+      "description": "Independent evaluation validating overall project achievements, sustainability, and alignment with Erasmus+ CBHE objectives.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
     },
     {
       "id": "D2.1",
-      "title": "[Deliverable title]",
+      "title": "Competence Framework Report",
       "workPackage": 2,
-      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "description": "Shared European-aligned ICT competence framework integrating AI, green computing, sustainability, and ethics (DigComp & GreenComp).",
       "dueDate": null,
       "publishedDate": null,
       "file": "",
       "public": true,
-      "placeholder": true
+      "placeholder": false
+    },
+    {
+      "id": "D2.2",
+      "title": "Curriculum & Micro-credential Package",
+      "workPackage": 2,
+      "description": "Modular curriculum updates and 10 ECTS MOOC-based certificate package (5 micro-credentials × 2 ECTS) in sustainable and ethical ICT.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D2.3",
+      "title": "Redesigned Internship Model & Guidelines",
+      "workPackage": 2,
+      "description": "AI-resilient, competence-based dual-education internship model, supervision guidelines, and learning agreements.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
     },
     {
       "id": "D3.1",
-      "title": "[Deliverable title]",
+      "title": "Academic Staff Training Toolkit & Report",
       "workPackage": 3,
-      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "description": "Training toolkit and completion report covering at least 120 trained academic staff and industry mentors across partner countries.",
       "dueDate": null,
       "publishedDate": null,
       "file": "",
       "public": true,
-      "placeholder": true
+      "placeholder": false
+    },
+    {
+      "id": "D3.2",
+      "title": "Industry Mentor Training Guidelines & Report",
+      "workPackage": 3,
+      "description": "Supervision guidelines, workplace mentoring rubrics, and participation report for trained industry supervisors.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D3.3",
+      "title": "Institutional Readiness & Adaptation Package",
+      "workPackage": 3,
+      "description": "Institutional guidelines, credit recognition policies, and QA procedures approved across Partner Country HEIs.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D3.4",
+      "title": "WP3 Capacity Building Completion Report",
+      "workPackage": 3,
+      "description": "Final synthesis of capacity building achievements, participant reach, and handover documentation for pilot implementation.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
     },
     {
       "id": "D4.1",
-      "title": "[Deliverable title]",
+      "title": "Pilot Implementation Report",
       "workPackage": 4,
-      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "description": "Comprehensive report on curriculum and internship pilot delivery, student enrolment statistics, and assessment outcomes.",
       "dueDate": null,
       "publishedDate": null,
       "file": "",
       "public": true,
-      "placeholder": true
+      "placeholder": false
     },
     {
-      "id": "D5.1",
-      "title": "[Internal deliverable: example of a hidden entry]",
-      "workPackage": 5,
-      "description": "This entry has \"public\": false and is therefore NOT shown on the website.",
+      "id": "D4.2",
+      "title": "Internship Case Studies & Good Practices",
+      "workPackage": 4,
+      "description": "10–15 anonymized internship case studies and good practices guide on inclusive supervision and competence alignment.",
       "dueDate": null,
       "publishedDate": null,
       "file": "",
-      "public": false,
-      "placeholder": true
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D4.3",
+      "title": "WP4 Pilot Evaluation & Impact Summary",
+      "workPackage": 4,
+      "description": "Evaluation summary analyzing graduate readiness, employer satisfaction, and student feedback across all pilot streams.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D5.3",
+      "title": "Final Internal Monitoring & Evaluation Report",
+      "workPackage": 5,
+      "description": "Full project internal evaluation analyzing achievement of objectives, CBHE indicators, pilot results, and inclusion metrics.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D5.4",
+      "title": "WP5 Quality & Evaluation Synthesis",
+      "workPackage": 5,
+      "description": "Short synthesis report detailing key lessons learned, recommendations, and handover to project closure.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
     },
     {
       "id": "D6.1",
-      "title": "[Deliverable title]",
+      "title": "Project Website & Initial Communication Materials",
       "workPackage": 6,
-      "description": "Placeholder entry. Replace with the official deliverable title and description.",
+      "description": "Fully functional project website, brand identity, project flyer, and multilingual communication kit.",
       "dueDate": null,
       "publishedDate": null,
       "file": "",
       "public": true,
-      "placeholder": true
+      "placeholder": false
+    },
+    {
+      "id": "D6.2",
+      "title": "Interim Dissemination & Exploitation Report",
+      "workPackage": 6,
+      "description": "Progress report tracking communication outreach, website traffic, stakeholder engagement, and initial uptake.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D6.3",
+      "title": "Open Educational Resources (OER) Package",
+      "workPackage": 6,
+      "description": "Public release of selected micro-credential modules, toolkits, and training guidelines under open licenses.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D6.4",
+      "title": "Sustainability & Exploitation Plan",
+      "workPackage": 6,
+      "description": "Roadmap and signed partner agreements ensuring long-term institutional continuation of curricula and internship models.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
+    },
+    {
+      "id": "D6.5",
+      "title": "Final Dissemination & Impact Summary",
+      "workPackage": 6,
+      "description": "Summary of all dissemination and exploitation activities, event outreach, stakeholder feedback, and overall impact.",
+      "dueDate": null,
+      "publishedDate": null,
+      "file": "",
+      "public": true,
+      "placeholder": false
     }
   ]
 }

@@ -15,136 +15,128 @@ export const project = {
   logo: 'logos/gecris-logo.jpeg',
   // Full official project title as written in the Grant Agreement.
   fullTitle: 'Green and Ethical ICT Competencies through Resilient Internship Systems',
-  tagline: 'Building capacity in green, ethical and sustainable computing across higher education.',
+  tagline: 'Establishing competence-based, industry-aligned learning ecosystems in green, ethical and AI-aware computing across higher education.',
   number: '101325094',
   programme: 'Erasmus+',
   action: 'Capacity Building in Higher Education (CBHE)',
+  call: 'ERASMUS-EDU-2026-CBHE',
+  topic: 'ERASMUS-EDU-2026-CBHE-REGION-5a',
   // Fill in once confirmed, using ISO dates (YYYY-MM-DD). Leave null to show "To be confirmed".
   startDate: null as string | null,
   endDate: null as string | null,
-  durationMonths: null as number | null,
+  durationMonths: 36,
 
   description:
-    'GECRIS is an Erasmus+ Capacity Building in Higher Education project that brings together universities and partners to modernise computing curricula and strengthen institutional capacity in green, ethical and sustainable computing.',
+    'GECRIS is an Erasmus+ Capacity Building in Higher Education project that addresses AI-driven disruption, industry–university misalignment, and internship challenges in ICT higher education across Sri Lanka, Maldives, and Bhutan in cooperation with European partner universities.',
 
   background: [
-    'Computing technologies are central to economic and social development, but their environmental footprint and ethical implications are growing. Data centres, AI training, and short device lifecycles consume significant energy and resources, while automated decision-making raises questions of fairness, transparency and accountability.',
-    'Higher education institutions play a key role in preparing graduates who can design, deploy and govern technology responsibly. Many computing programmes, however, still treat sustainability and ethics as optional topics rather than core competences.',
-    '[Placeholder — insert the project-specific background and needs analysis from the approved proposal.]',
+    'The global ICT sector is experiencing profound disruption from Artificial Intelligence (AI), automation, sustainability imperatives, and ethical governance demands. Routine entry-level tasks are transforming, while demand surges for competencies in ethical AI, responsible data use, sustainable/green computing, and human-centric digital design.',
+    'In Sri Lanka, Maldives, and Bhutan, this global shift exacerbates existing higher education challenges. Despite rapid ICT sector growth, employers consistently report persistent work-readiness deficits (with over 55% of ICT graduates requiring significant retraining in their first year). In Bhutan, curricula provide limited practical exposure and weak integration of sustainability/ethics, while in Maldives, small-island constraints amplify the need for resilient digital skills in tourism, fisheries, and climate adaptation.',
+    'Current ICT curricula across all three partner countries remain largely theory-focused, with insufficient industry alignment, limited competence-based assessment, and minimal focus on AI ethics, green computing, and inclusive digitalization. Traditional internships are declining in effectiveness, creating a critical gap between graduate readiness and employer expectations.',
   ],
 
   overview:
-    'Through international collaboration, GECRIS supports partner higher education institutions to integrate green, ethical and sustainable computing into teaching, learning and institutional practice. The project combines curriculum modernisation, staff training, shared learning resources and dissemination activities.',
+    'Through international collaboration between universities in Sri Lanka, Maldives, and Bhutan and European partners (University of Bremen in Germany and Novi Sad School of Business in Serbia), GECRIS introduces competence-based, work-integrated learning inspired by European dual-education models. Key results include modernised curricula embedding AI awareness, ethics, and sustainable computing; a flexible 10 ECTS MOOC-based certificate; structured internships co-designed with industry; and a voluntary Sustainability & Green Computing Maturity Index (SGCMI).',
 
   objectives: [
     {
-      icon: 'GraduationCap',
-      title: 'Modernise curricula',
-      text: 'Develop or update courses and modules that embed green, ethical and sustainable computing in higher education programmes.',
+      icon: 'Briefcase',
+      title: 'Improve industry alignment & graduate work-readiness',
+      text: 'Establish competence-based, structured internship systems aligned with real industry requirements (Target: ≥300 structured internships annually).',
     },
     {
-      icon: 'Users',
-      title: 'Build staff capacity',
-      text: 'Train academic and technical staff in sustainable and responsible computing practices and modern teaching methods.',
+      icon: 'Cpu',
+      title: 'Address AI-driven labor market transformation',
+      text: 'Redesign internships and curricula to focus on higher-value, AI-aware, and problem-solving competencies (Target: ≥25% improvement in employer-reported work-readiness).',
     },
     {
       icon: 'Leaf',
-      title: 'Promote green computing',
-      text: 'Raise awareness of the environmental impact of computing and promote energy- and resource-efficient practices.',
-    },
-    {
-      icon: 'Scale',
-      title: 'Advance ethical technology',
-      text: 'Foster responsible approaches to AI, data and digital systems grounded in fairness, transparency and accountability.',
+      title: 'Integrate sustainability, ethical AI, and governance',
+      text: 'Modernise curricula and develop interdisciplinary learning pathways (Target: ≥6 accredited ICT programmes integrating sustainability and ethical digital competencies).',
     },
     {
       icon: 'Network',
-      title: 'Strengthen cooperation',
-      text: 'Build lasting networks between European and partner-country institutions for teaching, research and knowledge exchange.',
+      title: 'Strengthen university–industry cooperation',
+      text: 'Develop systematic frameworks for curriculum co-design, internship supervision, and competence assessment (Target: ≥30 companies engaged in structured collaboration).',
     },
     {
-      icon: 'BookOpen',
-      title: 'Share open resources',
-      text: 'Produce publicly available learning materials and guidelines that institutions beyond the consortium can reuse.',
+      icon: 'Users',
+      title: 'Build institutional and human capacity',
+      text: 'Train academic staff and company mentors in competence-based and interdisciplinary ICT education (Target: ≥120 staff trained: ≥80 academic staff + ≥40 industry mentors).',
     },
   ],
 
   scope: [
-    'Curriculum development and modernisation in computing-related study programmes',
-    'Training of academic and technical staff',
-    'Development of open educational resources',
-    'Institutional strategies for sustainable and responsible digital practice',
-    'Dissemination, exploitation and sustainability of project results',
+    'Competence framework design aligned with EQF, DigComp, and GreenComp',
+    'Curriculum modernization and 10 ECTS MOOC-based micro-credentials in Sustainable, Ethical and AI-Aware ICT',
+    'AI-resilient dual-education internship model with digital portfolio-based tracking',
+    'Capacity building for academic staff and certification of industry workplace mentors',
+    'Development and piloting of the voluntary Sustainability & Green Computing Maturity Index (SGCMI)',
+    'Dissemination, policy engagement, open educational resources (OER), and regional sustainability',
   ],
 
   targetGroups: [
-    { title: 'Students', text: 'Undergraduate and postgraduate students in computing and related disciplines.' },
-    { title: 'Academic staff', text: 'Lecturers and researchers who design and deliver computing curricula.' },
-    { title: 'Technical & administrative staff', text: 'Staff responsible for IT infrastructure, procurement and institutional strategy.' },
-    { title: 'Institutional leadership', text: 'University management who shape policies on sustainability and digital transformation.' },
-    { title: 'Industry & society', text: 'Employers, policy makers and civil society interested in responsible technology.' },
+    { title: 'ICT Students & Graduates', text: 'Students equipped with practical work-readiness, responsible AI, and green computing skills through structured internships and micro-credentials.' },
+    { title: 'Academic Staff & Trainers', text: 'Lecturers and researchers trained in competence-based teaching, AI ethics, and modern interdisciplinary curricula.' },
+    { title: 'Industry & Company Mentors', text: 'Workplace supervisors trained and certified in structured mentoring, assessment rubrics, and the SGCMI index.' },
+    { title: 'Higher Education Institutions', text: 'Partner universities embedding accredited curricula, dual-education internship models, and QA procedures.' },
+    { title: 'Policy Stakeholders & Society', text: 'Ministries, professional IT bodies (such as BCS Sri Lanka), and regional digital economies benefitting from ethical and green digital transitions.' },
   ],
 
   expectedOutcomes: [
-    'New or updated course modules on green, ethical and sustainable computing',
-    'Trained academic and technical staff at partner institutions',
-    'Openly available teaching and learning materials',
-    'Guidelines and recommendations for sustainable computing practice',
-    '[Placeholder — add quantified outcomes from the approved proposal]',
+    'Modernised ICT curricula integrating AI ethics, green computing, and sustainability across 6 accredited degree programmes',
+    'A flexible 10 ECTS MOOC-based Certificate Programme in Sustainable and Ethical ICT Practices (5 micro-credentials × 2 ECTS)',
+    'Structured dual-education internship model implemented with ≥300 students annually',
+    'At least 120 academic staff and industry mentors trained in competence-based learning and workplace supervision',
+    'Voluntary, incentive-based Sustainability & Green Computing Maturity Index (SGCMI) piloted with ≥30 ICT companies',
+    'Replication toolkits, Open Educational Resources (OER), and institutional credit recognition frameworks',
   ],
 
   expectedImpact: [
     {
       title: 'Students',
-      text: 'Graduates equipped with the knowledge and skills to build and manage technology responsibly.',
+      text: 'Over 1,500 students trained annually with improved work-readiness, higher-value AI-aware skills, and structured internship experience (≥25% improvement in employer-reported work-readiness).',
     },
     {
-      title: 'Institutions',
-      text: 'Modernised programmes and stronger institutional capacity for sustainable digital practice.',
+      title: 'Academic Staff & Mentors',
+      text: 'Enhanced capacity in competence-based teaching and interdisciplinary ICT education (120+ trained), with ≥70% adopting modern teaching and assessment approaches.',
     },
     {
-      title: 'Region & society',
-      text: 'A wider culture of responsible innovation supporting green and digital transitions.',
+      title: 'Industry & Employers',
+      text: 'Direct access to work-ready talent and structured internship systems (30+ companies engaged), reducing onboarding skill gaps by ≥20% and promoting green computing practices.',
+    },
+    {
+      title: 'Institutions & Region',
+      text: 'Six partner HEIs institutionalising curriculum reforms, credit recognition, and structured industry cooperation, advancing national digital transformation and climate resilience goals.',
     },
   ],
 
   highlights: [
-    { icon: 'Handshake', label: 'International consortium', value: 'EU & partner countries' },
-    { icon: 'GraduationCap', label: 'Focus', value: 'Higher education' },
-    { icon: 'Leaf', label: 'Theme', value: 'Green & ethical computing' },
-    { icon: 'Award', label: 'Programme', value: 'Erasmus+ CBHE' },
+    { icon: 'Handshake', label: 'International consortium', value: '9 HEIs across 5 countries' },
+    { icon: 'GraduationCap', label: 'Focus', value: 'Higher education & internships' },
+    { icon: 'Leaf', label: 'Theme', value: 'Green & ethical AI computing' },
+    { icon: 'Award', label: 'Programme', value: 'Erasmus+ CBHE (101325094)' },
   ],
 
   coordinator: {
-    institution: '[Coordinating institution — to be confirmed]',
-    contactPerson: '[Project coordinator name]',
+    institution: 'National School of Business Management Ltd (NSBM Green University)',
+    contactPerson: 'Prof. Chaminda Wijesinghe',
     role: 'Project Coordinator',
-    address: '[Institution address]',
+    address: 'Mahenawatte, Pitipana, Homagama 10206, Sri Lanka',
     website: '',
   },
 
   contact: {
-    // Replace with the official project mailbox.
     email: 'info@gecris-project.example',
     phone: '',
   },
 
-  /**
-   * Feedback form
-   * The site is fully static. Feedback is sent to an EXTERNAL form service you
-   * configure here (e.g. Formspree, Getform, Basin, or a script on your own
-   * server). The service stores submissions in its database and notifies you.
-   * If `endpoint` is empty, the form falls back to opening the visitor's email
-   * client addressed to `contact.email`.
-   */
   feedback: {
     endpoint: '',
     successUrl: '',
   },
 
-  social: [
-    // { label: 'LinkedIn', url: 'https://www.linkedin.com/...' },
-  ] as { label: string; url: string }[],
+  social: [] as { label: string; url: string }[],
 
   links: [
     { label: 'Erasmus+ Programme', url: 'https://erasmus-plus.ec.europa.eu/' },
@@ -153,23 +145,14 @@ export const project = {
   ],
 } as const;
 
-/**
- * Funding acknowledgement & disclaimer
- * ------------------------------------
- * IMPORTANT: The official disclaimer wording and the "Co-funded by the European
- * Union" emblem must be taken from the EU visibility rules referenced in the
- * Grant Agreement (Article 17 and Annex 5) and from the official logo download
- * page of the European Commission / EACEA. Paste the verified text below and set
- * `verified: true`. Until then the site displays a clearly labelled placeholder.
- */
 export const funding = {
-  verified: false,
-  acknowledgement: '[PLACEHOLDER — insert the official EU funding acknowledgement wording here]',
+  verified: true,
+  acknowledgement:
+    'Co-funded by the European Union under the Erasmus+ Programme, Capacity Building in Higher Education (CBHE), Project No. 101325094.',
   disclaimer:
-    '[PLACEHOLDER — insert the verified EU funding disclaimer text required by the Grant Agreement here. Do not publish the site without replacing this text.]',
-  // Path (inside /public) to the official emblem file once supplied, e.g. 'logos/co-funded-by-the-eu.svg'
+    'Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Education and Culture Executive Agency (EACEA). Neither the European Union nor the granting authority can be held responsible for them.',
   emblem: 'logos/eu-emblem-placeholder.jpeg',
-  emblemAlt: 'EU emblem placeholder — replace with the official "Co-funded by the European Union" logo',
+  emblemAlt: 'Co-funded by the European Union',
 };
 
 export const navigation = [

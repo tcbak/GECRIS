@@ -1,77 +1,149 @@
 {
-  "_readme": "Consortium partners. Add one object per institution. 'logo' is a path inside /public. 'region' is used for grouping ('EU Member State' or 'Partner Country'). 'placeholder: true' shows a 'Placeholder' badge; set it to false (or remove it) once details are verified.",
+  "_readme": "Consortium partners. 'logo' is a path inside /public. 'region' is used for grouping ('EU Member State' or 'Partner Country').",
   "partners": [
     {
       "id": "p1",
-      "name": "NSBM Green University",
-      "shortName": "P1",
+      "name": "National School of Business Management Ltd (NSBM Green University)",
+      "shortName": "NSBM",
       "country": "Sri Lanka",
-      "region": "EU Member State",
+      "region": "Partner Country",
       "role": "Coordinator",
-      "description": "Placeholder description. Replace with a short (2–3 sentence) profile of the institution and its contribution to GECRIS.",
+      "description": "National School of Business Management (NSBM Green University) serves as the Project Coordinator, leading overall project coordination (WP1), dissemination, exploitation & sustainability (WP6), and co-leading pilot implementation (WP4). NSBM brings proven experience in industry-aligned ICT education and large-scale student engagement.",
       "website": "",
       "logo": "images/partners/NSBM.svg",
-      "placeholder": true
+      "placeholder": false
     },
     {
       "id": "p2",
-      "name": "Universitate of Bremen",
-      "shortName": "P2",
+      "name": "University of Bremen (Universitaet Bremen)",
+      "shortName": "UBREMEN",
       "country": "Germany",
       "region": "EU Member State",
       "role": "Partner",
-      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "description": "University of Bremen leads WP2 (Curriculum & Learning Framework Development), WP3 (Capacity Building), and WP5 (Quality Assurance). Bremen brings internationally recognised expertise in dual-education models, work-integrated learning, ethical AI governance, green computing, and competence-based curriculum design.",
       "website": "",
       "logo": "images/partners/BREMEN.svg",
-      "placeholder": true
+      "placeholder": false
     },
     {
       "id": "p3",
-      "name": "Sri Lanka Institute of Information Technology",
-      "shortName": "P3",
-      "country": "Sri Lanka",
+      "name": "Novi Sad School of Business (Visoka poslovna skola strukovnih studija u Novom Sadu)",
+      "shortName": "NSSB",
+      "country": "Serbia",
       "region": "EU Member State",
       "role": "Partner",
-      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "description": "Novi Sad School of Business co-leads quality assurance activities and hosts a key transnational review meeting. NSSB contributes expertise in institutional reform, sustainability integration, micro-credential frameworks, and HEI–industry collaboration.",
       "website": "",
-      "logo": "images/partners/SLIIT.svg",
-      "placeholder": true
+      "logo": "",
+      "placeholder": false
     },
     {
       "id": "p4",
-      "name": "[Partner Institution 4]",
-      "shortName": "P4",
-      "country": "[Country]",
+      "name": "Sri Lanka Institute of Information Technology (Guarantee) Ltd",
+      "shortName": "SLIIT",
+      "country": "Sri Lanka",
       "region": "Partner Country",
       "role": "Partner",
-      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "description": "SLIIT co-leads WP4 pilots and contributes to WP2 curriculum co-design and WP3 capacity building. SLIIT is a leader in applied ICT education with long-standing industry partnerships, enabling strong internship reform and validation.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
-      "placeholder": true
+      "logo": "images/partners/SLIIT.svg",
+      "placeholder": false
     },
     {
       "id": "p5",
-      "name": "[Partner Institution 5]",
-      "shortName": "P5",
-      "country": "[Country]",
+      "name": "University of Colombo (School of Computing - UCSC)",
+      "shortName": "UOC",
+      "country": "Sri Lanka",
       "region": "Partner Country",
       "role": "Partner",
-      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "description": "University of Colombo School of Computing (UCSC) co-leads WP4 pilot cohorts and supports WP2 curriculum co-design and WP3 capacity building, providing deep academic expertise and ensuring national coverage and alignment with Sri Lanka’s digital economy strategy.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
-      "placeholder": true
+      "logo": "",
+      "placeholder": false
     },
     {
       "id": "p6",
-      "name": "[Partner Institution 6]",
-      "shortName": "P6",
-      "country": "[Country]",
+      "name": "University of Peradeniya",
+      "shortName": "UOP",
+      "country": "Sri Lanka",
       "region": "Partner Country",
       "role": "Partner",
-      "description": "Placeholder description. Replace with a short profile of the institution and its expertise relevant to the project.",
+      "description": "University of Peradeniya co-leads WP4 pilot cohorts and supports curriculum and capacity building activities, bringing proven experience in Erasmus+ CBHE curriculum development and international academic networks.",
       "website": "",
-      "logo": "images/partners/partner-placeholder.svg",
-      "placeholder": true
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p7",
+      "name": "Villa College (Villa Educational Services Pvt Ltd)",
+      "shortName": "VC",
+      "country": "Maldives",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "Villa College co-leads WP4 pilots in island contexts and hosts the project finalization and closing meeting (WP6). Villa College focuses on sustainable digital development for tourism and climate resilience in small-island contexts.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p8",
+      "name": "Royal University of Bhutan (College of Science and Technology - CST)",
+      "shortName": "RUB",
+      "country": "Bhutan",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "Royal University of Bhutan (CST) co-leads WP4 pilots and hosts the dissemination and stakeholder engagement meeting (WP6), ensuring cultural and environmental alignment with Bhutan's Gross National Happiness framework and national green transition strategies.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p9",
+      "name": "The Maldives National University (Dhivehi Raajjeyge Qaumee University)",
+      "shortName": "MNU",
+      "country": "Maldives",
+      "region": "Partner Country",
+      "role": "Partner",
+      "description": "The Maldives National University co-leads WP4 pilots in island contexts and supports dissemination and sustainability, adapting project outputs to small-state higher education and national digital transformation priorities.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p10",
+      "name": "Ministry of Education, Higher Education and Vocational Education (MOHE-SL)",
+      "shortName": "MOHE-SL",
+      "country": "Sri Lanka",
+      "region": "Partner Country",
+      "role": "Associated Partner",
+      "description": "National government ministry in Sri Lanka supporting policy dialogue, mainstreaming of competence-based education, and institutional accreditation of project outcomes.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p11",
+      "name": "Ministry of Education, Higher Education and Skills Development",
+      "shortName": "MoHE-MV",
+      "country": "Maldives",
+      "region": "Partner Country",
+      "role": "Associated Partner",
+      "description": "National ministry in the Maldives supporting national digital transformation strategies, skills development, and policy uptake of internship and curriculum frameworks.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
+    },
+    {
+      "id": "p12",
+      "name": "Sri Lanka Section of BCS the Chartered Institute for IT",
+      "shortName": "BCS-SL",
+      "country": "Sri Lanka",
+      "region": "Partner Country",
+      "role": "Associated Partner",
+      "description": "Leading chartered professional body for IT in Sri Lanka, supporting industry alignment, skills standards, internship placements, and professional recognition.",
+      "website": "",
+      "logo": "",
+      "placeholder": false
     }
   ]
 }

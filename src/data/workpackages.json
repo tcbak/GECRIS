@@ -1,98 +1,143 @@
 {
-  "_readme": "Work packages. INDICATIVE placeholder structure based on a typical Erasmus+ CBHE project. Replace titles, objectives, activities, leads and deliverables with the official content from Annex I (Description of the Action) of the Grant Agreement.",
+  "_readme": "Official project work packages from Annex I (Description of the Action) and Application Form Part B.",
   "workPackages": [
     {
       "number": 1,
-      "title": "Project Management and Coordination",
-      "lead": "[Lead partner]",
+      "title": "Management and Coordination",
+      "lead": "National School of Business Management Ltd (NSBM Green University)",
       "objectives": [
-        "Ensure effective coordination, communication and decision-making across the consortium",
-        "Monitor progress, risks and budget against the work plan"
+        "Ensure timely, transparent, and compliant project implementation across all partner institutions",
+        "Monitor progress against project objectives, KPIs, and risk mitigation strategies",
+        "Provide independent external evaluation and strategic guidance through the External Advisory Committee (EAC)",
+        "Ensure financial accountability, transparent budgeting, and compliance with Erasmus+ rules"
       ],
       "activities": [
-        "Kick-off and regular consortium meetings",
-        "Progress monitoring and reporting",
-        "Financial and administrative management"
+        "Establishment of Project Steering Committee (PSC) and consortium governance structures",
+        "Organization of kick-off meeting in Sri Lanka (Month 2) and regular virtual coordination sessions",
+        "Financial and administrative management, budget monitoring, and interim/final reporting",
+        "Establishment and operation of the independent External Advisory Committee (EAC)",
+        "Risk management, ethics compliance, data protection, and corrective action oversight"
       ],
-      "outcomes": ["Efficient and timely implementation of the project"],
-      "deliverables": ["D1.1"],
-      "placeholder": true
+      "outcomes": [
+        "Approved governance structure, Quality Assurance Plan, KPI framework, and risk register",
+        "Timely submission of all technical and financial reports to EACEA",
+        "Smooth consortium cooperation and external strategic guidance"
+      ],
+      "deliverables": ["D1.1", "D1.2", "D1.4"],
+      "placeholder": false
     },
     {
       "number": 2,
-      "title": "Needs Analysis and State of the Art",
-      "lead": "[Lead partner]",
+      "title": "Curriculum and Learning Framework Development",
+      "lead": "University of Bremen (UBREMEN)",
       "objectives": [
-        "Analyse current computing curricula and institutional practice",
-        "Identify skills gaps in green, ethical and sustainable computing"
+        "Address industry skills gaps and graduate work-readiness in partner countries",
+        "Integrate AI ethics, sustainability, and green computing into ICT curricula",
+        "Redesign internships as competence-based learning pathways aligned with European standards"
       ],
       "activities": [
-        "Survey of partner institutions and stakeholders",
-        "Review of good practice in Europe and partner countries"
+        "Design of a shared competence framework integrating AI, green computing, and ethics (aligned with EQF, DigComp, and GreenComp)",
+        "Development of modular curriculum updates and 4–5 micro-credentials (5–10 ECTS)",
+        "Redesign of structured, AI-resilient internship models, assessment rubrics, and learning agreements",
+        "Transnational validation workshop in Germany (Month 13) and staff mobility to Novi Sad School of Business"
       ],
-      "outcomes": ["Evidence base for curriculum development"],
-      "deliverables": ["D2.1"],
-      "placeholder": true
+      "outcomes": [
+        "Comprehensive European-aligned ICT Competence Framework Report",
+        "Modular curriculum packages and 10 ECTS MOOC-based certificate",
+        "Redesigned dual-education internship guidelines endorsed by industry"
+      ],
+      "deliverables": ["D2.1", "D2.2", "D2.3"],
+      "placeholder": false
     },
     {
       "number": 3,
-      "title": "Curriculum Development and Modernisation",
-      "lead": "[Lead partner]",
+      "title": "Capacity Building",
+      "lead": "University of Bremen (UBREMEN)",
       "objectives": [
-        "Design new or updated modules on green, ethical and sustainable computing",
-        "Develop open teaching and learning materials"
+        "Train academic staff in ethical, sustainable, and inclusive ICT teaching and competence-based assessment",
+        "Prepare industry mentors for high-quality, fair, and structured internship supervision",
+        "Adapt institutional QA and credit recognition systems in Partner Country HEIs for sustainable delivery"
       ],
       "activities": [
-        "Module design workshops",
-        "Development of course materials",
-        "Peer review and accreditation support"
+        "Train-the-trainers and cascade training programmes for academic staff across partner HEIs",
+        "Industry mentor training and short-term mobility to Novi Sad School of Business (Serbia)",
+        "Institutional readiness support: adapting QA procedures, credit recognition, and prior learning policies",
+        "Mid-term transnational review meeting in Serbia (Month 25)"
       ],
-      "outcomes": ["Modernised curricula ready for delivery"],
-      "deliverables": ["D3.1"],
-      "placeholder": true
+      "outcomes": [
+        "At least 120 staff trained (≥80 academic staff + ≥40 industry mentors)",
+        "Certified workplace mentors and academic trainers",
+        "Approved institutional credit recognition and QA guidelines across partner HEIs"
+      ],
+      "deliverables": ["D3.1", "D3.2", "D3.3", "D3.4"],
+      "placeholder": false
     },
     {
       "number": 4,
-      "title": "Capacity Building and Pilot Implementation",
-      "lead": "[Lead partner]",
+      "title": "Implementation and Testing",
+      "lead": "NSBM Green University (with SLIIT, UOC, and UOP)",
       "objectives": [
-        "Train academic and technical staff",
-        "Pilot the new modules with students"
+        "Deliver and test revised ICT curricula and micro-credentials with students across Partner Country HEIs",
+        "Implement structured, AI-resilient internships with at least 300 students annually",
+        "Collect evidence of improved graduate readiness, employer satisfaction, and learning outcomes"
       ],
       "activities": [
-        "Train-the-trainer programmes",
-        "Pilot delivery and student feedback collection"
+        "Pilot delivery of revised ICT modules and micro-credentials with student cohorts",
+        "Roll-out of structured internships with industry partners using digital portfolios",
+        "Competence-based student assessment, feedback collection, and student ambassador cohorts",
+        "Mid-pilot review and transnational adjustment meetings in Bhutan (Month 32)"
       ],
-      "outcomes": ["Trained staff and validated modules"],
-      "deliverables": ["D4.1"],
-      "placeholder": true
+      "outcomes": [
+        "At least 300 students completing structured internships per year",
+        "≥25% improvement in employer-reported work-readiness",
+        "Documented internship case studies, best practices guide, and evaluation datasets"
+      ],
+      "deliverables": ["D4.1", "D4.2", "D4.3"],
+      "placeholder": false
     },
     {
       "number": 5,
-      "title": "Quality Assurance and Evaluation",
-      "lead": "[Lead partner]",
-      "objectives": ["Ensure the quality of project processes and results"],
-      "activities": ["Quality assurance plan", "Internal and external evaluation"],
-      "outcomes": ["Continuous improvement of project outputs"],
-      "deliverables": ["D5.1"],
-      "placeholder": true
+      "title": "Quality Assurance, Monitoring and Evaluation",
+      "lead": "University of Bremen (UBREMEN)",
+      "objectives": [
+        "Establish and operate a comprehensive quality assurance and monitoring system throughout the project",
+        "Track progress against objectives, KPIs, CBHE indicators, and pilot results in real time",
+        "Conduct mid-term and final internal evaluations supporting external EAC reviews"
+      ],
+      "activities": [
+        "Setup and maintenance of the Quality Assurance Plan, monitoring tools, and KPI dashboards",
+        "Continuous progress and risk monitoring with quarterly briefs for the Steering Committee",
+        "Mid-term internal evaluation (Month 18) and final internal evaluation (Month 35)"
+      ],
+      "outcomes": [
+        "Continuous quality control, early risk mitigation, and KPI tracking",
+        "Comprehensive mid-term and final evaluation reports validating CBHE indicators"
+      ],
+      "deliverables": ["D5.3", "D5.4"],
+      "placeholder": false
     },
     {
       "number": 6,
       "title": "Dissemination, Exploitation and Sustainability",
-      "lead": "[Lead partner]",
+      "lead": "National School of Business Management Ltd (NSBM Green University)",
       "objectives": [
-        "Communicate project results to target groups",
-        "Ensure the long-term use of results beyond the funding period"
+        "Develop and maintain project communication channels (website, media, newsletters) to promote results",
+        "Engage stakeholders (ministries, HEIs, industry, students) to ensure uptake of project outputs",
+        "Produce a final Sustainability & Exploitation Plan, OER repository, and policy recommendations"
       ],
       "activities": [
-        "Website, social media and newsletters",
-        "Dissemination events and conferences",
-        "Sustainability planning"
+        "Development and maintenance of the multilingual project website, social media, and newsletters",
+        "Organization of national and regional dissemination workshops and industry forums",
+        "Publication of Open Educational Resources (OER) package under open licenses",
+        "Finalization, Sustainability & Closing Conference in Maldives (Month 34)"
       ],
-      "outcomes": ["Wide visibility and lasting impact of project results"],
-      "deliverables": ["D6.1"],
-      "placeholder": true
+      "outcomes": [
+        "High regional and international visibility for the GECRIS initiative",
+        "Open-access learning resources and toolkits for long-term regional replication",
+        "Signed MOUs and policy briefs securing institutional continuation after project end"
+      ],
+      "deliverables": ["D6.1", "D6.2", "D6.3", "D6.4", "D6.5"],
+      "placeholder": false
     }
   ]
 }

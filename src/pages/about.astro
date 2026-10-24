@@ -50,7 +50,9 @@ const toc = [
         <SectionHeading eyebrow="Overview" title="Project overview" />
         <p class="mt-6 leading-relaxed text-slate-700">{project.description}</p>
         <p class="mt-4 leading-relaxed text-slate-700">{project.overview}</p>
-        {project.fullTitle.startsWith('[') && <p class="placeholder-note mt-4">{project.fullTitle}</p>}
+        <p class="mt-4 rounded-lg bg-surface p-4 text-sm text-slate-700">
+          <strong class="text-brand-900">Official Title:</strong> {project.fullTitle}
+        </p>
       </section>
 
       <section id="objectives" class="scroll-mt-28">
