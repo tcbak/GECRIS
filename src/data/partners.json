@@ -34,7 +34,7 @@
       "role": "Partner",
       "description": "Novi Sad School of Business co-leads quality assurance activities and hosts a key transnational review meeting. NSSB contributes expertise in institutional reform, sustainability integration, micro-credential frameworks, and HEI–industry collaboration.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/NOVAM.svg",
       "placeholder": false
     },
     {
@@ -58,7 +58,7 @@
       "role": "Partner",
       "description": "University of Colombo School of Computing (UCSC) co-leads WP4 pilot cohorts and supports WP2 curriculum co-design and WP3 capacity building, providing deep academic expertise and ensuring national coverage and alignment with Sri Lanka’s digital economy strategy.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/UOC.svg",
       "placeholder": false
     },
     {
@@ -70,7 +70,7 @@
       "role": "Partner",
       "description": "University of Peradeniya co-leads WP4 pilot cohorts and supports curriculum and capacity building activities, bringing proven experience in Erasmus+ CBHE curriculum development and international academic networks.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/UOP.svg",
       "placeholder": false
     },
     {
@@ -82,7 +82,7 @@
       "role": "Partner",
       "description": "Villa College co-leads WP4 pilots in island contexts and hosts the project finalization and closing meeting (WP6). Villa College focuses on sustainable digital development for tourism and climate resilience in small-island contexts.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/VILLA.svg",
       "placeholder": false
     },
     {
@@ -94,7 +94,7 @@
       "role": "Partner",
       "description": "Royal University of Bhutan (CST) co-leads WP4 pilots and hosts the dissemination and stakeholder engagement meeting (WP6), ensuring cultural and environmental alignment with Bhutan's Gross National Happiness framework and national green transition strategies.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/CST.svg",
       "placeholder": false
     },
     {
@@ -106,7 +106,7 @@
       "role": "Partner",
       "description": "The Maldives National University co-leads WP4 pilots in island contexts and supports dissemination and sustainability, adapting project outputs to small-state higher education and national digital transformation priorities.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/MNU.svg",
       "placeholder": false
     },
     {
@@ -118,7 +118,7 @@
       "role": "Associated Partner",
       "description": "National government ministry in Sri Lanka supporting policy dialogue, mainstreaming of competence-based education, and institutional accreditation of project outcomes.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/High.svg",
       "placeholder": false
     },
     {
@@ -130,7 +130,7 @@
       "role": "Associated Partner",
       "description": "National ministry in the Maldives supporting national digital transformation strategies, skills development, and policy uptake of internship and curriculum frameworks.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/EDU.svg",
       "placeholder": false
     },
     {
@@ -142,7 +142,7 @@
       "role": "Associated Partner",
       "description": "Leading chartered professional body for IT in Sri Lanka, supporting industry alignment, skills standards, internship placements, and professional recognition.",
       "website": "",
-      "logo": "",
+      "logo": "images/partners/BCS.svg",
       "placeholder": false
     }
   ]
