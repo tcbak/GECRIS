@@ -7,6 +7,17 @@ import workPackagesData from '../data/workpackages.json';
 import deliverablesData from '../data/deliverables.json';
 import resourcesData from '../data/resources.json';
 import galleryData from '../data/gallery.json';
+import teamData from '../data/team.json';
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  institution: string;
+  photo: string;
+  bio: string;
+}
+export const team: TeamMember[] = teamData.team;
 
 export interface Partner {
   id: string;

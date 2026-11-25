@@ -1,0 +1,116 @@
+{
+  "team": [
+    {
+      "id": "t1",
+      "name": "Prof. Chaminda Wijesinghe",
+      "role": "Project Coordinator",
+      "institution": "National School of Business Management Ltd (NSBM Green University)",
+      "photo": "/images/team/ProfChaminda.jpg",
+      "bio": ""
+    },
+    {
+      "id": "t2",
+      "name": "Thilini Bakmeedeniya",
+      "role": "Coordinator Contact",
+      "institution": "National School of Business Management Ltd (NSBM Green University)",
+      "photo": "/images/team/Thilini.png",
+      "bio": ""
+    },
+    {
+      "id": "t3",
+      "name": "Anton Jayakody",
+      "role": "Team Member",
+      "institution": "National School of Business Management Ltd (NSBM Green University)",
+      "photo": "/images/team/Anton.jpg",
+      "bio": ""
+    },
+    {
+      "id": "t4",
+      "name": "Diluka Wijesinghe",
+      "role": "Team Member",
+      "institution": "National School of Business Management Ltd (NSBM Green University)",
+      "photo": "/images/team/Diluka.jpg",
+      "bio": ""
+    },
+    {
+      "id": "t5",
+      "name": "Dr. Prasanna Sumathipala",
+      "role": "Participant Contact",
+      "institution": "Sri Lanka Institute of Information Technology",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t6",
+      "name": "Dr. Kalpani Manathunga",
+      "role": "Team Member",
+      "institution": "Sri Lanka Institute of Information Technology",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t7",
+      "name": "Prof. Dasuni Nawinna",
+      "role": "Team Member",
+      "institution": "Sri Lanka Institute of Information Technology",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t8",
+      "name": "Prof. Amalka Pinidiyarachchi",
+      "role": "Participant Contact",
+      "institution": "University of Peradeniya",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t9",
+      "name": "Dr. Sampath Deegalla",
+      "role": "Participant Contact",
+      "institution": "University of Peradeniya",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t10",
+      "name": "Prof. Damayanthi Herath",
+      "role": "Participant Contact",
+      "institution": "University of Peradeniya",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t11",
+      "name": "Dr. Rasika Dayarathna",
+      "role": "Participant Contact",
+      "institution": "University of Colombo",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t12",
+      "name": "Dr. Mohommad Aadil",
+      "role": "Participant Contact",
+      "institution": "VILLA EDUCATIONAL SERVICES PVT LTD",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t13",
+      "name": "Dr.Margret Vijay",
+      "role": "",
+      "institution": "VILLA EDUCATIONAL SERVICES PVT LTD",
+      "photo": "/images/team/",
+      "bio": ""
+    },
+    {
+      "id": "t14",
+      "name": "Dr.Fazeela Ibrahim",
+      "role": "",
+      "institution": "VILLA EDUCATIONAL SERVICES PVT LTD",
+      "photo": "/images/team/",
+      "bio": ""
+    }
+  ]
+}

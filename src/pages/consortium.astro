@@ -5,6 +5,7 @@ import SectionHeading from '../components/SectionHeading.astro';
 import { project } from '../data/project';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { groupBy, sortedPartners } from '../lib/data';
+import { team } from '../lib/data';
 
 /**
  * Grouping mode: 'region' (EU Member State / Partner Country), 'country', 'role' or 'none'.
@@ -67,5 +68,27 @@ const countries = new Set(sortedPartners.map((p) => p.country).filter((c) => !c.
         </section>
       ))
     }
+  <!-- ---------- NEW TEAM SECTION ---------- -->
+<section class="mt-14" aria-labelledby="team">
+  <SectionHeading id="team" title="Consortium team" />
+  <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {team.map((member) => (
+      <li class="flex items-start gap-4">
+        <img
+          src={member.photo}
+          alt={member.name}
+          class="h-16 w-16 rounded-full object-cover"
+        />
+        <div>
+          <h3 class="font-semibold">{member.name}</h3>
+          <p class="text-sm text-slate-500">{member.role}</p>
+          <p class="text-xs text-slate-400">{member.institution}</p>
+          <p class="mt-1 text-xs">{member.bio}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
   </div>
 </BaseLayout>
