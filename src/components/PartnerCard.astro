@@ -11,7 +11,7 @@ const isCoordinator = partner.role === 'Coordinator';
 ---
 
 <article class="card card-hover flex h-full flex-col overflow-hidden">
-  <div class="flex h-36 items-center justify-center border-b border-slate-100 bg-surface p-6">
+  <div class="flex h-56 items-center justify-center border-b border-slate-100 bg-surface p-4">
     <img
       src={url(partner.logo || '/images/partners/partner-placeholder.svg')}
       alt={`${partner.name} logo`}
@@ -19,7 +19,8 @@ const isCoordinator = partner.role === 'Coordinator';
       height="120"
       loading="lazy"
       decoding="async"
-      class="max-h-24 w-auto object-contain"
+      style={partner.logoScale ? `transform: scale(${partner.logoScale})` : undefined}
+      class="h-full max-h-48 w-auto object-contain"
     />
   </div>
   <div class="flex flex-1 flex-col p-6">

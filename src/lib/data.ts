@@ -29,6 +29,7 @@ export interface Partner {
   description: string;
   website?: string;
   logo?: string;
+  logoScale?: number;
   placeholder?: boolean;
 }
 

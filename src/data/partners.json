@@ -23,6 +23,7 @@
       "description": "University of Bremen leads WP2 (Curriculum & Learning Framework Development), WP3 (Capacity Building), and WP5 (Quality Assurance). Bremen brings internationally recognised expertise in dual-education models, work-integrated learning, ethical AI governance, green computing, and competence-based curriculum design.",
       "website": "",
       "logo": "images/partners/BREMEN.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {
@@ -35,6 +36,7 @@
       "description": "Novi Sad School of Business co-leads quality assurance activities and hosts a key transnational review meeting. NSSB contributes expertise in institutional reform, sustainability integration, micro-credential frameworks, and HEI–industry collaboration.",
       "website": "",
       "logo": "images/partners/NOVAM.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {
@@ -83,6 +85,7 @@
       "description": "Villa College co-leads WP4 pilots in island contexts and hosts the project finalization and closing meeting (WP6). Villa College focuses on sustainable digital development for tourism and climate resilience in small-island contexts.",
       "website": "",
       "logo": "images/partners/VILLA.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {
@@ -95,6 +98,7 @@
       "description": "Royal University of Bhutan (CST) co-leads WP4 pilots and hosts the dissemination and stakeholder engagement meeting (WP6), ensuring cultural and environmental alignment with Bhutan's Gross National Happiness framework and national green transition strategies.",
       "website": "",
       "logo": "images/partners/CST.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {
@@ -119,6 +123,7 @@
       "description": "National government ministry in Sri Lanka supporting policy dialogue, mainstreaming of competence-based education, and institutional accreditation of project outcomes.",
       "website": "",
       "logo": "images/partners/High.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {
@@ -131,6 +136,7 @@
       "description": "National ministry in the Maldives supporting national digital transformation strategies, skills development, and policy uptake of internship and curriculum frameworks.",
       "website": "",
       "logo": "images/partners/EDU.svg",
+      "logoScale": 1.4,
       "placeholder": false
     },
     {

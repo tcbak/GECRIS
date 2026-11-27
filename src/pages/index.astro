@@ -150,7 +150,7 @@ const quickLinks = [
             <li>
               <a
                 href={url(`/consortium#${p.id}`)}
-                class="card card-hover flex h-28 items-center justify-center p-4"
+                class="card card-hover flex h-40 items-center justify-center p-3"
                 title={p.name}
               >
                 <img
@@ -160,7 +160,8 @@ const quickLinks = [
                   height="120"
                   loading="lazy"
                   decoding="async"
-                  class="max-h-16 w-auto object-contain grayscale transition hover:grayscale-0"
+                  style={p.logoScale ? `transform: scale(${p.logoScale})` : undefined}
+                  class="h-full max-h-32 w-auto object-contain grayscale transition hover:grayscale-0"
                 />
               </a>
             </li>

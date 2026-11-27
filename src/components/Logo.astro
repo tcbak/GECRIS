@@ -16,7 +16,7 @@ const sub = variant === 'light' ? 'text-leaf-200' : 'text-leaf-700';
     src={url(project.logo || 'logos/gecris-logo.jpeg')}
     alt={`${project.acronym} logo`}
     class:list={[
-      'h-11 w-auto object-contain rounded',
+      'h-12 w-auto object-contain rounded sm:h-14',
       variant === 'light' && 'bg-white p-1'
     ]}
     loading="eager"
